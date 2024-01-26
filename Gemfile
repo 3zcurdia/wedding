@@ -25,6 +25,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "dockerfile-rails", ">= 1.6", require: false
   gem "rubocop", require: false
   gem "rubocop-minitest", require: false
   gem "rubocop-performance", require: false
@@ -38,5 +39,3 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
-gem "dockerfile-rails", ">= 1.6", :group => :development
