@@ -15,6 +15,7 @@ gem "tailwindcss-rails"
 gem "turbo-rails"
 
 gem "jbuilder"
+gem "litestack"
 # gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
