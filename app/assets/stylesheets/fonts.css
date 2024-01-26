@@ -1,0 +1,179 @@
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/CormorantGaramond-Regular.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/CormorantGaramond-Italic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Italic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/CormorantGaramond-Bold.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/CormorantGaramond-BoldItalic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-BoldItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/CormorantGaramond-Light.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Light.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  src: url('/fonts/CormorantGaramond-LightItalic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-LightItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/CormorantGaramond-Medium.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Medium.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/CormorantGaramond-MediumItalic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-MediumItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/CormorantGaramond-Medium.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Medium.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  src: url('/fonts/CormorantGaramond-MediumItalic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-MediumItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/CormorantGaramond-Regular.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-SemiBold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  src: url('/fonts/CormorantGaramond-SemiBoldItalic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-SemiBoldItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-SemiBold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/CormorantGaramond-SemiBoldItalic.woff2') format('woff2'),
+    url('/fonts/CormorantGaramond-SemiBoldItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/Lato-Light.woff2') format('woff2'),
+    url('/fonts/Lato-Light.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: url('/fonts/Lato-LightItalic.woff2') format('woff2'),
+    url('/fonts/Lato-LightItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Lato-Regular.woff2') format('woff2'),
+    url('/fonts/Lato-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/Lato-Bold.woff2') format('woff2'),
+    url('/fonts/Lato-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/fonts/Lato-BoldItalic.woff2') format('woff2'),
+    url('/fonts/Lato-BoldItalic.woff') format('woff');
+  font-display: swap;
+}
