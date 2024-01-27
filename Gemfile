@@ -14,10 +14,11 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
 
+gem "authentication-zero", "~> 3.0"
+gem "bcrypt", "~> 3.1.7"
+gem "bootsnap", require: false
 gem "jbuilder"
 gem "litestack"
-# gem "bcrypt", "~> 3.1.7"
-gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
