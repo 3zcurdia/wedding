@@ -2,9 +2,8 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_current_request_details
-  before_action :authenticate
 
-  def current_amdin = Current.admin
+  def current_amdin = Current.record if Current.session_admin?
   helper_method :current_admin
 
   private
@@ -13,7 +12,7 @@ class ApplicationController < ActionController::Base
     if (session_record = Session.find_by(id: cookies.signed[:session_token]))
       Current.session = session_record
     else
-      redirect_to sign_in_path
+      redirect_to root_path, alert: "You must sign in first"
     end
   end
 

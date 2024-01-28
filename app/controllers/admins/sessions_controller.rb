@@ -2,8 +2,6 @@
 
 module Admins
   class SessionsController < ApplicationController
-    skip_before_action :authenticate, only: %i[new create]
-
     before_action :set_session, only: :destroy
 
     def index
@@ -19,7 +17,7 @@ module Admins
 
         redirect_to root_path, notice: "Signed in successfully"
       else
-        redirect_to sign_in_path(email_hint: params[:email]), alert: "That email or password is incorrect"
+        redirect_to admin_sign_in_path(email_hint: params[:email]), alert: "That email or password is incorrect"
       end
     end
 
