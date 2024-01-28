@@ -30,9 +30,7 @@ end
 group :development do
   gem "dockerfile-rails", ">= 1.6", require: false
   gem "rubocop", require: false
-  gem "rubocop-minitest", require: false
   gem "rubocop-performance", require: false
-  gem "rubocop-rails", require: false
   gem "web-console"
   # gem "rack-mini-profiler"
   # gem "spring"

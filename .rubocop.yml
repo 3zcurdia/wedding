@@ -10,9 +10,7 @@ AllCops:
     - 'log/**/*'
 
 require:
-  - rubocop-rails
   - rubocop-performance
-  - rubocop-minitest
 
 Style/Documentation:
   Enabled: false
