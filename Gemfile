@@ -4,18 +4,16 @@ source "https://rubygems.org"
 
 ruby "3.3.0"
 
+gem "propshaft"
 gem "puma", ">= 5.0"
 gem "rails", "~> 7.1.3"
 gem "sqlite3", "~> 1.4"
 
 gem "cssbundling-rails"
 gem "jsbundling-rails"
-gem "propshaft"
 gem "stimulus-rails"
-gem "tailwindcss-rails"
 gem "turbo-rails"
 
-gem "authentication-zero", "~> 3.0"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", require: false
 gem "jbuilder"
@@ -28,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "authentication-zero", "~> 3.0"
   gem "dockerfile-rails", ">= 1.6", require: false
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
