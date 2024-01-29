@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Admins
+module Admin
   class SessionsController < ApplicationController
     before_action :set_session, only: :destroy
 

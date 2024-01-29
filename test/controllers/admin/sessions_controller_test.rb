@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class Admins::SessionsControllerTest < ActionDispatch::IntegrationTest
+class Admin::SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @admin = admins(:lazaro_nixon)
   end

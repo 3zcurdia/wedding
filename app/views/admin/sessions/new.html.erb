@@ -1,6 +1,6 @@
 <h1 class="text-3xl font-bold">Sign in</h1>
 
-<%= form_with(url: admins_sign_in_path) do |form| %>
+<%= form_with(url: admin_sign_in_path) do |form| %>
   <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.email_field :email, value: params[:email_hint], required: true, autofocus: true, autocomplete: "email" %>

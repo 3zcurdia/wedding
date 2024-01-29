@@ -14,11 +14,11 @@ gem "jsbundling-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
 
+# gem "activeadmin", "~> 4.0.0.beta4"
 gem "bcrypt", "~> 3.1.7"
 gem "bootsnap", require: false
 gem "jbuilder"
 gem "litestack"
-# gem "activeadmin", "~> 4.0.0.beta4"
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do

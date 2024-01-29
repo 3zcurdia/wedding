@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "pages#home"
   get "details", to: "pages#details"
 
-  namespace :admins do
+  namespace :admin do
     get  "sign_in", to: "sessions#new"
     post "sign_in", to: "sessions#create"
     resources :sessions, only: %i[index show destroy]

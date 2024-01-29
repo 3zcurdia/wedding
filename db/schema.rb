@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_26_194652) do
     t.boolean "verified", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["email"], name: "index_admin_on_email", unique: true
   end
 
   create_table "guests", force: :cascade do |t|

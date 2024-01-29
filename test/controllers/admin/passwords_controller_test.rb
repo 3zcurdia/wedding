@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class Admins::PasswordsControllerTest < ActionDispatch::IntegrationTest
+class Admin::PasswordsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @admin = sign_in_as(admins(:lazaro_nixon))
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Admins
+module Admin
   class PasswordsController < ApplicationController
     before_action :set_admin
 
