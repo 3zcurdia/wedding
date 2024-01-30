@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get "details", to: "pages#details"
 
   namespace :admin do
+    get "/", to: "home#index"
     get  "sign_in", to: "sessions#new"
     post "sign_in", to: "sessions#create"
     resources :sessions, only: %i[index show destroy]
     resource  :password, only: %i[edit update]
+    resources :guests
   end
 end

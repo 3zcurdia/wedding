@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @guest %>
+
+<div>
+  <%= link_to "Edit this guest", edit_admin_guest_path(@guest) %> |
+  <%= link_to "Back to guests", admin_guests_path %>
+
+  <%= button_to "Destroy this guest", [:admin, @guest], method: :delete %>
+</div>

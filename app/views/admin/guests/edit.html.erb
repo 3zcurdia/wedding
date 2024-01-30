@@ -1,0 +1,10 @@
+<h1>Editing guest</h1>
+
+<%= render "form", guest: @guest %>
+
+<br>
+
+<div>
+  <%= link_to "Show this guest", [:admin, @guest] %> |
+  <%= link_to "Back to guests", admin_guests_path %>
+</div>
