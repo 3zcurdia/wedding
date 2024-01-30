@@ -35,11 +35,6 @@ group :development do
   # gem "spring"
 end
 
-group :test do
-  gem "capybara"
-  gem "selenium-webdriver"
-end
-
 group :production do
   gem "sentry-rails"
   gem "sentry-ruby"
