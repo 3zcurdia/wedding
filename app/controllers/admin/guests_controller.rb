@@ -53,7 +53,7 @@ module Admin
     end
 
     def guest_params
-      params.require(:guest).pemit(:first_name, :last_name, :phone, :plus_ones_count)
+      params.require(:guest).permit(:first_name, :last_name, :phone, :plus_ones_count)
     end
   end
 end
