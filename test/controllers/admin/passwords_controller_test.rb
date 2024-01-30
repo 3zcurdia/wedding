@@ -4,7 +4,7 @@ require "test_helper"
 
 class Admin::PasswordsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @admin = sign_in_as(admins(:lazaro_nixon))
+    @admin = admin_sign_in_as(admins(:lazaro_nixon))
   end
 
   test "should get edit" do

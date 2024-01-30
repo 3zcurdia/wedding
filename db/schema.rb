@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_26_194652) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_30_041032) do
   create_table "admins", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
     t.boolean "verified", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admin_on_email", unique: true
+    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "guests", force: :cascade do |t|
@@ -31,14 +31,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_26_194652) do
     t.index ["phone"], name: "index_guests_on_phone", unique: true
   end
 
-  create_table "plus_ones", force: :cascade do |t|
-    t.string "name", default: ""
-    t.integer "guest_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["guest_id"], name: "index_plus_ones_on_guest_id"
-  end
-
   create_table "sessions", force: :cascade do |t|
     t.string "record_type", null: false
     t.integer "record_id", null: false
@@ -49,5 +41,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_26_194652) do
     t.index ["record_type", "record_id"], name: "index_sessions_on_record"
   end
 
-  add_foreign_key "plus_ones", "guests"
 end
