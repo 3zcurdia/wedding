@@ -8,12 +8,11 @@ class ActiveSupport::TestCase
   parallelize(workers: :number_of_processors)
   fixtures :all
 
-  def admin_session
-    @admin_session ||= admin_users(:lazaro_nixon).sessions.create!
+  def admin_user
+    @admin_user ||= admin_users(:lazaro_nixon)
   end
 
   def admin_sign_in
-    # post(admin_sign_in_url, params: { email: admin_users(:lazaro_nixon).email, password: "Secret1*3*5*" })
-    cookies[:session_token] = admin_session.id
+    post(admin_sign_in_url, params: { email: admin_user.email, password: "Secret1*3*5*" })
   end
 end

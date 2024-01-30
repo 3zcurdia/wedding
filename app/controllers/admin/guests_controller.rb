@@ -5,7 +5,7 @@ module Admin
     before_action :set_guest, only: %i[show edit update destroy]
 
     def index
-      @guests = pagy(Guest.all, page: params[:page])
+      @pagy, @guests = pagy(Guest.all, page: params[:page])
     end
 
     def show; end

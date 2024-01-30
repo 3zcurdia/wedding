@@ -2,6 +2,8 @@
 
 module Admin
   class SessionsController < ApplicationController
+    skip_before_action :authenticate!, only: %i[new create]
+
     def index
       @sessions = Current.admin.sessions.order(created_at: :desc)
     end
@@ -9,7 +11,7 @@ module Admin
     def new; end
 
     def create
-      if (admin = Admin.authenticate_by(email: params[:email], password: params[:password]))
+      if (admin = AdminUser.authenticate_by(email: params[:email], password: params[:password]))
         @session = admin.sessions.create!
         cookies.signed.permanent[:session_token] = { value: @session.id, httponly: true }
 

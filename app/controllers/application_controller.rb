@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   before_action :set_current_request_details
 
   def current_admin = Current.record if Current.session_admin?
