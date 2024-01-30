@@ -2,9 +2,9 @@
 
 require "test_helper"
 
-class AdminTest < ActiveSupport::TestCase
+class AdminUserTest < ActiveSupport::TestCase
   def admin
-    @admin ||= admins(:lazaro_nixon)
+    @admin ||= admin_users(:lazaro_nixon)
   end
 
   def test_valid

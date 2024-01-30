@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Admin < ApplicationRecord
+class AdminUser < ApplicationRecord
   has_secure_password
 
   generates_token_for :password_reset, expires_in: 20.minutes do

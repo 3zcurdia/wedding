@@ -8,6 +8,6 @@ class Session < ApplicationRecord
     self.ip_address = Current.ip_address
   end
 
-  def admin? = record_type == "Admin"
+  def admin? = record_type == "AdminUser"
   def user? = record_type == "User"
 end

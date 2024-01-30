@@ -16,5 +16,4 @@ class Guest < ApplicationRecord
   def confirmed?
     confirmed_at.present?
   end
-
 end
