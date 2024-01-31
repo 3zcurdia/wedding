@@ -4,5 +4,5 @@ class Current < ActiveSupport::CurrentAttributes
   attribute :session
   attribute :user_agent, :ip_address
 
-  delegate :admin?, :user?, to: :session, allow_nil: true, prefix: true
+  delegate :admin?, :user?, :record, to: :session, allow_nil: true, prefix: true
 end

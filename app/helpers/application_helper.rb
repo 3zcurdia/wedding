@@ -6,15 +6,13 @@ module ApplicationHelper
   def flash_class(type)
     case type
     when "success"
-      "bg-green-500 text-white"
+      "flex bg-green-100 rounded-lg p-4 mb-4 text-sm text-green-700"
     when "error"
-      "bg-red-500 text-white"
+      "flex bg-red-100 rounded-lg p-4 mb-4 text-sm text-red-700"
     when "warning"
-      "bg-yellow-500 text-black"
-    when "notice"
-      "bg-blue-500 text-white"
-    else
-      "bg-gray-500 text-white"
+      "flex bg-yellow-100 rounded-lg p-4 mb-4 text-sm text-yellow-700"
+    else #when "notice"
+      "flex bg-blue-100 rounded-lg p-4 mb-4 text-sm text-blue-700"
     end
   end
 end

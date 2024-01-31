@@ -10,8 +10,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
-    <main class="mx-auto max-w-7xl py-5">
+  <body class="<%= yield(:page_color) if content_for?(:page_color) %>">
+    <main class="mx-auto max-w-7xl">
       <%= render "flash" %>
       <%= yield %>
     </main>

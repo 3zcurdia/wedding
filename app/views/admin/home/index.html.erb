@@ -1,23 +1,18 @@
-<p style="color: green"><%= notice %></p>
-
-<p>Signed as <%= Current.admin.email %></p>
+<p>Signed as <%= Current.session_record.email %></p>
 
 <h2>Login and verification</h2>
 
 <div>
-  <%= link_to "Change password", edit_password_path %>
+  <%= link_to "Change password", edit_admin_password_path %>
 </div>
 
-<div>
-  <%= link_to "Change email address", edit_identity_email_path %>
-</div>
 
 <h2>Access history</h2>
 
 <div>
-  <%= link_to "Devices & Sessions", sessions_path %>
+  <%= link_to "Devices & Sessions", admin_sessions_path %>
 </div>
 
 <br>
 
-<%= button_to "Log out", Current.session, method: :delete %>
+<%= button_to "Log out", admin_session_path(Current.session), method: :delete %>
