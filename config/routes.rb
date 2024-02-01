@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     post "sign_in", to: "sessions#create"
     resources :sessions, only: %i[index show destroy]
     resource  :password, only: %i[edit update]
+    namespace :guests do
+      resources :imports, only: %i[new create]
+    end
     resources :guests
   end
 end

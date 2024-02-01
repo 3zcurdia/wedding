@@ -3,3 +3,6 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
+import AutouploadFormController from "./autoupload_form_controller"
+application.register("autoupload-form", AutouploadFormController)

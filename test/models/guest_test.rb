@@ -46,4 +46,11 @@ class GuestTest < ActiveSupport::TestCase
 
     assert guest.confirmed?
   end
+
+  def test_import_csv
+    file = File.open(Rails.root.join("test/fixtures/files/guests.csv"))
+    assert_difference "Guest.count", 5 do
+      assert Guest.import_csv(file)
+    end
+  end
 end

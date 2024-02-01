@@ -11,7 +11,7 @@ module ApplicationHelper
       "flex bg-red-100 rounded-lg p-4 mb-4 text-sm text-red-700"
     when "warning"
       "flex bg-yellow-100 rounded-lg p-4 mb-4 text-sm text-yellow-700"
-    else #when "notice"
+    else
       "flex bg-blue-100 rounded-lg p-4 mb-4 text-sm text-blue-700"
     end
   end

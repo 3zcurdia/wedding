@@ -20,7 +20,8 @@ class Admin::GuestsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create guest" do
     assert_difference("Guest.count") do
-      post admin_guests_url, params: { guest: { first_name: "Test", last_name: "LastNane", phone: "55-55-55-5555", plus_ones_count: 2 } }
+      valid_attributes = { first_name: "Test", last_name: "LastNane", phone: "55-55-55-5555", plus_ones_count: 2 }
+      post admin_guests_url, params: { guest: valid_attributes }
     end
 
     assert_redirected_to admin_guest_url(Guest.last)
