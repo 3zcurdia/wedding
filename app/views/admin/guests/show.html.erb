@@ -1,10 +1,6 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @guest %>
 
-<div>
-  <%= link_to "Edit this guest", edit_admin_guest_path(@guest) %> |
-  <%= link_to "Back to guests", admin_guests_path %>
-
-  <%= button_to "Destroy this guest", [:admin, @guest], method: :delete %>
+<div class="flex flex-row gap-2">
+  <%= link_to "Edit", edit_admin_guest_path(@guest), class: "text-sky-600 hover:cursor-pointer" %>
+  <%= button_to "Destroy", [:admin, @guest], method: :delete, class: "text-red-700 hover:cursor-pointer" %>
 </div>

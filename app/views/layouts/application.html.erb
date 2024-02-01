@@ -11,9 +11,11 @@
   </head>
 
   <body class="<%= yield(:page_color) if content_for?(:page_color) %>">
-    <main class="mx-auto max-w-7xl">
+    <%= render "navbar" if signed_in? %>
+    <main class="mx-auto max-w-6xl">
       <%= render "flash" %>
       <%= yield %>
     </main>
   </body>
+  <script defer src="https://kit.fontawesome.com/238d584d83.js" crossorigin="anonymous"></script>
 </html>

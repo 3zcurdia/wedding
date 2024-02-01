@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   def current_admin = Current.record if Current.session_admin?
   helper_method :current_admin
 
+  def signed_in? = Current.session.present?
+  helper_method :signed_in?
+
   def authenticate!
     if (session_record = Session.find_by(id: session_token))
       Current.session = session_record

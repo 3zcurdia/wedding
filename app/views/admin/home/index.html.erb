@@ -1,18 +1,16 @@
-<p>Signed as <%= Current.session_record.email %></p>
+<div class="my-3">
+  <h2 class="text-3xl font-bold py-4">Login and verification</h2>
 
-<h2>Login and verification</h2>
+  <div class="block py-2">
+    <%= link_to "Change password", edit_admin_password_path, class: "text-sky-600 hover:cursor-pointer" %>
+  </div>
 
-<div>
-  <%= link_to "Change password", edit_admin_password_path %>
+
+  <h2 class="text-2xl font-semibold py-3">Access history</h2>
+
+  <div class="block py-2">
+    <%= link_to "Devices & Sessions", admin_sessions_path, class: "text-sky-600 hover:cursor-pointer" %>
+  </div>
+
+  <%= button_to "Log out", admin_session_path(Current.session), method: :delete, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
 </div>
-
-
-<h2>Access history</h2>
-
-<div>
-  <%= link_to "Devices & Sessions", admin_sessions_path %>
-</div>
-
-<br>
-
-<%= button_to "Log out", admin_session_path(Current.session), method: :delete %>

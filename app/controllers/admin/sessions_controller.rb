@@ -5,7 +5,7 @@ module Admin
     skip_before_action :authenticate!, only: %i[new create]
 
     def index
-      @sessions = Current.admin.sessions.order(created_at: :desc)
+      @sessions = Current.session_record.sessions.order(created_at: :desc)
     end
 
     def new; end
@@ -22,9 +22,9 @@ module Admin
     end
 
     def destroy
-      @session = Current.admin.sessions.find(params[:id])
+      @session = Current.session_record.sessions.find(params[:id])
       @session.destroy
-      redirect_to(sessions_path, notice: "That session has been logged out")
+      redirect_to(admin_sessions_path, notice: "That session has been logged out")
     end
   end
 end

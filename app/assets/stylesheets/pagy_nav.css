@@ -11,14 +11,14 @@
 .pagy-nav-js .page.active,
 .pagy-nav-js .page.prev.disabled,
 .pagy-nav-js .page.next.disabled {
-  @apply block rounded-lg px-3 py-1 text-sm text-gray-500 font-semibold bg-gray-200 shadow-md;
+  @apply bg-midnight-green-200 text-midnight-green-500 block rounded-lg px-3 py-1 text-sm font-semibold shadow-md;
 
   &:hover {
-    @apply bg-gray-300;
+    @apply bg-midnight-green-300;
   }
 
   &:active {
-    @apply bg-gray-400 text-white;
+    @apply bg-midnight-green-400 text-white;
   }
 }
 
@@ -26,51 +26,50 @@
 .pagy-nav .page.next.disabled,
 .pagy-nav-js .page.prev.disabled,
 .pagy-nav-js .page.next.disabled {
-  @apply text-gray-400 cursor-default;
+  @apply text-midnight-green-400 cursor-default;
 
   &:hover {
-    @apply text-gray-400 bg-gray-200;
+    @apply bg-midnight-green-200 text-midnight-green-400;
   }
 
   &:active {
-    @apply text-gray-400 bg-gray-200;
+    @apply bg-midnight-green-200 text-midnight-green-400;
   }
 }
 
 .pagy-nav .page.active,
 .pagy-nav-js .page.active {
-  @apply text-white cursor-default bg-gray-400;
+  @apply bg-midnight-green-400 cursor-pointer text-white;
 
   &:hover {
-    @apply text-white bg-gray-400;
+    @apply bg-midnight-green-400 text-white;
   }
 
   &:active {
-    @apply bg-gray-400 text-white;
+    @apply bg-midnight-green-400 text-white;
   }
 }
 
-
 .pagy-combo-nav-js {
-  @apply flex max-w-max rounded-full px-3 py-1 text-sm text-gray-500 font-semibold bg-gray-200 shadow-md;
+  @apply bg-midnight-green-200 text-midnight-green-500 flex max-w-max rounded-full px-3 py-1 text-sm font-semibold shadow-md;
 }
 
 .pagy-combo-nav-js .pagy-combo-input {
-  @apply bg-white px-2 rounded-sm
+  @apply rounded bg-white px-2;
 }
 
 .pagy-combo-nav-js .page.prev,
 .pagy-combo-nav-js .page.next {
   &:hover {
-    @apply text-gray-800;
+    @apply text-midnight-green-800 cursor-pointer;
   }
 
   &:active {
-    @apply text-gray-800;
+    @apply text-midnight-green-800;
   }
 }
 
 .pagy-combo-nav-js .page.prev.disabled,
 .pagy-combo-nav-js .page.next.disabled {
-  @apply text-gray-400 cursor-default;
+  @apply text-midnight-green-400 cursor-default;
 }

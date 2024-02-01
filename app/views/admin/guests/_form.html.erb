@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  <div class="flex flex-row py-2 gap-2">
+    <div class="basis-1/2">
+      <%= form.label :first_name, class: "block py-1" %>
+      <%= form.text_field :first_name, class: "border w-full py-2 px-2 rounded-md hover:border-midnight-green-600 ring-1 ring-inset ring-gray-300" %>
+    </div>
+
+    <div class="basis-1/2">
+      <%= form.label :last_name, class: "block py-1" %>
+      <%= form.text_field :last_name, class: "border w-full py-2 px-2 rounded-md hover:border-midnight-green-600 ring-1 ring-inset ring-gray-300" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="block py-2">
+    <%= form.label :phone, class: "block py-1" %>
+    <%= form.phone_field :phone, class: "border w-full py-2 px-2 rounded-md hover:border-midnight-green-600 ring-1 ring-inset ring-gray-300" %>
   </div>
 
-  <div>
-    <%= form.label :phone %>
-    <%= form.phone_field :phone %>
+  <div class="block py-2">
+    <%= form.label :plus_ones_count, class: "block py-1" %>
+    <%= form.number_field :plus_ones_count, class: "border w-full py-2 px-2 rounded-md hover:border-midnight-green-600 ring-1 ring-inset ring-gray-300" %>
   </div>
 
-  <div>
-    <%= form.label :plus_ones_count %>
-    <%= form.number_field :plus_ones_count %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="block py-2">
+    <%= form.submit class: "bg-midnight-green hover:bg-midnight-green-700 hover:cursor-pointer text-white font-bold py-2 px-4 rounded-md" %>
   </div>
 <% end %>

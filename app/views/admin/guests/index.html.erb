@@ -1,14 +1,10 @@
-<h1>Guests</h1>
-<%= link_to "New guest", new_admin_guest_path %>
+<div class="my-3">
+  <h2 class="text-3xl font-bold py-4">Guests</h2>
+  <%= link_to "New guest", new_admin_guest_path, class: "text-sky-600 hover:cursor-pointer" %>
 
-<div id="guests">
-  <% @guests.each do |guest| %>
-    <%= render guest %>
-    <p>
-      <%= link_to "Show this guest", [:admin, guest] %>
-    </p>
-  <% end %>
+  <div id="guests" class="py-3">
+    <%= render @guests %>
+  </div>
+
+  <%== pagy_nav(@pagy) %>
 </div>
-
-<%== pagy_nav(@pagy) %>
-<%== pagy_info(@pagy) %>
