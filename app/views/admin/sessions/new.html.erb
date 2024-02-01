@@ -1,20 +1,18 @@
-<% content_for(:page_color, "from-midnight-green-900 to-midnight-green-600 bg-gradient-to-br") %>
+<% content_for(:page_color, "from-sky-900 to-sky-600 bg-gradient-to-br") %>
 <div class='flex items-center justify-center min-h-screen'>
   <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white border rounded-lg shadow-2xl'>
     <div class='max-w-md mx-auto space-y-3'>
       <h3 class="text-3xl font-semibold">Admin</h3>
       <%= form_with(url: admin_sign_in_path, class: "mt-4") do |form| %>
-        <div>
-          <%= form.label :email, class: "block py-1" %>
-          <%= form.email_field :email, class: "border w-full py-2 px-2 rounded-md hover:border-midnight-green-600 ring-1 ring-inset ring-gray-300 font-mono" %>
+        <div class="py-2">
+          <%= form.email_field :email, placeholder: :email, class: "border w-full py-2 px-2 rounded-md hover:border-sky-600 ring-1 ring-inset ring-gray-300 font-mono" %>
           <!-- <p class="text-sm mt-2 px-2 hidden text-gray-600">Text helper</p> -->
         </div>
-        <div>
-          <%= form.label :password, class: "block py-1" %>
-          <%= form.password_field :password, class: "border w-full py-2 px-2 rounded-md hover:border-midnight-green-600 ring-1 ring-inset ring-gray-300 font-mono" %>
+        <div class="py-2">
+          <%= form.password_field :password, placeholder: :password, class: "border w-full py-2 px-2 rounded-md hover:border-sky-600 ring-1 ring-inset ring-gray-300 font-mono" %>
         </div>
-        <div class="flex gap-3 pt-3 items-center">
-          <%= form.submit "Login", class: "bg-midnight-green w-full hover:cursor-pointer px-4 py-2 rounded-md text-white" %>
+        <div class="flex gap-3 items-center py-2">
+          <%= form.submit "Login", class: "bg-sky-700 w-full hover:cursor-pointer px-4 py-2 rounded-md text-white" %>
           <!-- <a href="#">Forgot Password</a> -->
         </div>
         <% end %>

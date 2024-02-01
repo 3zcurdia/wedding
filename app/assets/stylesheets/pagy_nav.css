@@ -11,14 +11,14 @@
 .pagy-nav-js .page.active,
 .pagy-nav-js .page.prev.disabled,
 .pagy-nav-js .page.next.disabled {
-  @apply bg-midnight-green-200 text-midnight-green-500 block rounded-lg px-3 py-1 text-sm font-semibold shadow-md;
+  @apply block rounded-lg bg-sky-200 px-3 py-1 text-sm font-semibold text-sky-500 shadow-md;
 
   &:hover {
-    @apply bg-midnight-green-300;
+    @apply bg-sky-300;
   }
 
   &:active {
-    @apply bg-midnight-green-400 text-white;
+    @apply bg-sky-400 text-white;
   }
 }
 
@@ -26,32 +26,32 @@
 .pagy-nav .page.next.disabled,
 .pagy-nav-js .page.prev.disabled,
 .pagy-nav-js .page.next.disabled {
-  @apply text-midnight-green-400 cursor-default;
+  @apply cursor-default text-sky-400;
 
   &:hover {
-    @apply bg-midnight-green-200 text-midnight-green-400;
+    @apply bg-sky-200 text-sky-400;
   }
 
   &:active {
-    @apply bg-midnight-green-200 text-midnight-green-400;
+    @apply bg-sky-200 text-sky-400;
   }
 }
 
 .pagy-nav .page.active,
 .pagy-nav-js .page.active {
-  @apply bg-midnight-green-400 cursor-pointer text-white;
+  @apply cursor-pointer bg-sky-400 text-white;
 
   &:hover {
-    @apply bg-midnight-green-400 text-white;
+    @apply bg-sky-400 text-white;
   }
 
   &:active {
-    @apply bg-midnight-green-400 text-white;
+    @apply bg-sky-400 text-white;
   }
 }
 
 .pagy-combo-nav-js {
-  @apply bg-midnight-green-200 text-midnight-green-500 flex max-w-max rounded-full px-3 py-1 text-sm font-semibold shadow-md;
+  @apply flex max-w-max rounded-full bg-sky-200 px-3 py-1 text-sm font-semibold text-sky-500 shadow-md;
 }
 
 .pagy-combo-nav-js .pagy-combo-input {
@@ -61,15 +61,15 @@
 .pagy-combo-nav-js .page.prev,
 .pagy-combo-nav-js .page.next {
   &:hover {
-    @apply text-midnight-green-800 cursor-pointer;
+    @apply cursor-pointer text-sky-800;
   }
 
   &:active {
-    @apply text-midnight-green-800;
+    @apply text-sky-800;
   }
 }
 
 .pagy-combo-nav-js .page.prev.disabled,
 .pagy-combo-nav-js .page.next.disabled {
-  @apply text-midnight-green-400 cursor-default;
+  @apply cursor-default text-sky-400;
 }
