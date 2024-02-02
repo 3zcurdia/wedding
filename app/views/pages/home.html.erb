@@ -34,14 +34,13 @@
   </div>
   <div class="flex flex-col items-center justify-center w-full md:w-1/2">
     <p class="font-serif text-3xl py-6">Ingresa tu numero telefonico</p>
-      <p class="prose">
-        ¿Listo para bailar bajo las estrellas y brindar por el amor? Haz clic en 'Confirmar Asistencia' con tu numero telefonico a continuación y únete a nosotros para celebrar la unión de Aidé y Luis. Tu presencia es la pieza que falta para completar nuestro día. Estamos ansiosos por compartir risas, alegría y recuerdos que perdurarán toda la vida. Hagamos de esta celebración algo tan mágico como el amor que nos ha reunido a todos. ¡Nos vemos allí!
-      </p>
-    <input type="text" class="mt-5 border-1 border-gray-300 rounded-full py-2 px-5 w-full" placeholder="(55)-55-55-5555" />
-    <a href="#"
-      class="text-white bg-midnight-green-700 hover:bg-midnight-green-800 focus:outline-none focus:ring-4 focus:ring-midnight-green-300 font-medium rounded-full px-8 py-2.5 text-center my-5 dark:bg-midnight-green-600 dark:hover:bg-midnight-green-700 dark:focus:ring-midnight-green-800">
-      Confirmar Asistencia
-    </a>
+    <p class="prose">
+      ¿Listo para bailar bajo las estrellas y brindar por el amor? Haz clic en 'Ver detalles' con tu numero telefonico a continuación y únete a nosotros para celebrar la unión de Aidé y Luis. Tu presencia es la pieza que falta para completar nuestro día. Estamos ansiosos por compartir risas, alegría y recuerdos que perdurarán toda la vida. Hagamos de esta celebración algo tan mágico como el amor que nos ha reunido a todos. ¡Nos vemos allí!
+    </p>
+    <%= form_with(url: guests_access_path, method: :post, scope: :guest, class: "w-3/4 flex flex-col") do |form| %>
+      <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-5 border-1 border-gray-300 rounded-full py-2 px-5 w-full" %>
+      <%= form.submit "Ver detalles", class: "text-white bg-midnight-green-700 hover:bg-midnight-green-800 focus:outline-none focus:ring-4 focus:ring-midnight-green-300 font-medium rounded-full px-8 py-2.5 text-center my-5 dark:bg-midnight-green-600 dark:hover:bg-midnight-green-700 dark:focus:ring-midnight-green-800" %>
+    <% end %>
   </div>
 </div>
 <!--

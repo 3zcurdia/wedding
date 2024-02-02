@@ -4,6 +4,17 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   before_action :set_current_request_details
 
+  def current_guest = Current.guest
+  helper_method :current_guest
+
+  def validate_guest!
+    if (guest = Guest.find_by(id: session[:guest_id]))
+      Current.guest = guest
+    else
+      redirect_to root_path, alert: "Unable to access this page"
+    end
+  end
+
   def current_admin = Current.record if Current.session_admin?
   helper_method :current_admin
 

@@ -3,6 +3,9 @@
 Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   root "pages#home"
+  namespace :guests do
+    resource :access, only: %i[create]
+  end
   get "details", to: "pages#details"
 
   namespace :admin do
