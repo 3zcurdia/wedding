@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_30_041937) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_08_023733) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -28,6 +28,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_30_041937) do
     t.datetime "confirmed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "companion_id"
+    t.index ["companion_id"], name: "index_guests_on_companion_id"
     t.index ["phone"], name: "index_guests_on_phone", unique: true
   end
 
@@ -41,4 +43,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_30_041937) do
     t.index ["record_type", "record_id"], name: "index_sessions_on_record"
   end
 
+  add_foreign_key "guests", "guests", column: "companion_id"
 end

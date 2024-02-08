@@ -43,6 +43,13 @@ class Admin::GuestsControllerTest < ActionDispatch::IntegrationTest
     assert_equal 0, @guest.reload.plus_ones_count
   end
 
+  test "should update guest with companion" do
+    companion = guests(:jane_doe)
+    patch admin_guest_url(@guest), params: { guest: { companion_id: companion.id } }
+    assert_redirected_to admin_guest_url(@guest)
+    assert_equal companion.id, @guest.reload.companion_id
+  end
+
   test "should destroy guest" do
     assert_difference("Guest.count", -1) do
       delete admin_guest_url(@guest)
