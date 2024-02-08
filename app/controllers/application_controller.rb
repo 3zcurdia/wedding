@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     if (session_record = Session.find_by(id: session_token))
       Current.session = session_record
     else
-      redirect_to root_path, alert: "You must sign in first"
+      redirect_to admin_sign_in_path, alert: "You must sign in first"
     end
   end
 
