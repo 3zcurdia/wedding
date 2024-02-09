@@ -22,6 +22,8 @@ gem "pagy"
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem "brakeman", "~> 6.1"
+  gem "bundler-audit", "~> 0.9.1"
   gem "debug", platforms: %i[mri windows]
 end
 
