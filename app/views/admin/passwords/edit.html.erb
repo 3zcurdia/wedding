@@ -1,12 +1,12 @@
 <h1 class="text-3xl font-bold py-4">Change your password</h1>
 
-<%= form_with(url: password_path, method: :patch) do |form| %>
-  <% if @user.errors.any? %>
+<%= form_with(url: admin_password_path, method: :patch) do |form| %>
+  <% if @admin.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-        <% @user.errors.each do |error| %>
+        <% @admin.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -37,5 +37,5 @@
 <br>
 
 <div>
-  <%= link_to "Back", root_path %>
+  <%= link_to "Back", admin_path %>
 </div>

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_admin = Current.record if Current.session_admin?
+  def current_admin = Current.session_record if Current.session_admin?
   helper_method :current_admin
 
   def signed_in? = Current.session.present?

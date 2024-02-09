@@ -17,9 +17,9 @@
 
     <div class="flex flex-row gap-2">
       <% if action_name != "show" %>
-        <%= link_to "Show", admin_guest_path(guest), class: "text-sky-600 hover:cursor-pointer" %>
+        <%= link_to "Show", admin_guest_path(guest), class: "text-blue-600 hover:cursor-pointer" %>
       <% end %>
-      <%= link_to "Edit", edit_admin_guest_path(guest), class: "text-sky-600 hover:cursor-pointer" %>
+      <%= link_to "Edit", edit_admin_guest_path(guest), class: "text-blue-600 hover:cursor-pointer" %>
       <%= button_to "Destroy", [:admin, guest], method: :delete, class: "text-red-700 hover:cursor-pointer" %>
     </div>
 

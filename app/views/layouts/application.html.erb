@@ -12,7 +12,7 @@
 
   <body class="<%= yield(:page_color) if content_for?(:page_color) %>">
     <%= render "navbar" if signed_in? %>
-    <main class="mx-auto max-w-6xl">
+    <main class="mx-auto max-w-6xl py-4">
       <%= render "flash" %>
       <%= yield %>
     </main>

@@ -1,9 +1,9 @@
-<nav class="bg-sky-700 p-4 flex items-center justify-between">
+<nav class="bg-slate-950 p-4 flex items-center justify-between">
   <div>
-    <h1 class="text-white text-xl font-semibold">Aide & Luis</h1>
+    <%= link_to "Aide & Luis", admin_path, class: "text-white text-xl font-semibold" if signed_in? %>
   </div>
   <div class="flex items-center space-x-4">
-    <span class="text-white"><%= Current.session_record.email %></span>
+    <span class="text-white"><%= Current.session_record.email  if signed_in? %></span>
     <i class="fas fa-user-circle text-white text-2xl"></i>
   </div>
 </nav>

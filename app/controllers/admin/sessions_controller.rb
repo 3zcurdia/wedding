@@ -10,6 +10,8 @@ module Admin
 
     def new; end
 
+    def show; end
+
     def create
       if (admin = AdminUser.authenticate_by(email: params[:email], password: params[:password]))
         @session = admin.sessions.create!

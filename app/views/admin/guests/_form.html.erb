@@ -14,31 +14,31 @@
   <div class="flex flex-row py-2 gap-2">
     <div class="basis-1/2">
       <%= form.label :first_name, class: "block py-1" %>
-      <%= form.text_field :first_name, class: "border w-full py-2 px-2 rounded-md hover:border-sky-600 ring-1 ring-inset ring-gray-300" %>
+      <%= form.text_field :first_name, class: "border w-full py-2 px-2 rounded-md hover:border-blue-600 ring-1 ring-inset ring-gray-300" %>
     </div>
 
     <div class="basis-1/2">
       <%= form.label :last_name, class: "block py-1" %>
-      <%= form.text_field :last_name, class: "border w-full py-2 px-2 rounded-md hover:border-sky-600 ring-1 ring-inset ring-gray-300" %>
+      <%= form.text_field :last_name, class: "border w-full py-2 px-2 rounded-md hover:border-blue-600 ring-1 ring-inset ring-gray-300" %>
     </div>
   </div>
 
   <div class="block py-2">
     <%= form.label :phone, class: "block py-1" %>
-    <%= form.phone_field :phone, class: "border w-full py-2 px-2 rounded-md hover:border-sky-600 ring-1 ring-inset ring-gray-300" %>
+    <%= form.phone_field :phone, class: "border w-full py-2 px-2 rounded-md hover:border-blue-600 ring-1 ring-inset ring-gray-300" %>
   </div>
 
   <div class="block py-2">
     <%= form.label :plus_ones_count, class: "block py-1" %>
-    <%= form.number_field :plus_ones_count, class: "border w-full py-2 px-2 rounded-md hover:border-sky-600 ring-1 ring-inset ring-gray-300" %>
+    <%= form.number_field :plus_ones_count, class: "border w-full py-2 px-2 rounded-md hover:border-blue-600 ring-1 ring-inset ring-gray-300" %>
   </div>
 
   <div class="block py-2">
     <%= form.label :companion, class: "block py-1" %>
-    <%= form.collection_select :companion_id, Guest.order(:last_name), :id, :full_name, { include_blank: true }, class: "border w-full py-2 px-2 rounded-md hover:border-sky-600 ring-1 ring-inset ring-gray-300" %>
+    <%= form.collection_select :companion_id, Guest.order(:last_name), :id, :full_name, { include_blank: true }, class: "border w-full py-2 px-2 rounded-md hover:border-blue-600 ring-1 ring-inset ring-gray-300" %>
   </div>
 
   <div class="block py-2">
-    <%= form.submit class: "bg-sky-700 hover:bg-sky-700 hover:cursor-pointer text-white font-bold py-2 px-4 rounded-md" %>
+    <%= form.submit class: "bg-blue-700 hover:bg-blue-700 hover:cursor-pointer text-white font-bold py-2 px-4 rounded-md" %>
   </div>
 <% end %>

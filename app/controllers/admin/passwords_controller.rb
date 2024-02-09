@@ -17,7 +17,7 @@ module Admin
     private
 
     def set_admin
-      @admin = Current.admin
+      @admin = Current.session_record if Current.session_admin?
     end
 
     def admin_params
