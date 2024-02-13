@@ -35,3 +35,4 @@ rails db:prepare
 bin/dev
 ```
 
+5. Open your browser and go to `http://localhost:3000` to see the website. If you want to test the details page use the phone number `1234567890` in the root app.
