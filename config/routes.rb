@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resource :access, only: %i[create]
   end
   get "details", to: "pages#details"
+  get "calendar", to: "pages#calendar", as: :calendar
 
   namespace :admin do
     get "/", to: "home#index"
