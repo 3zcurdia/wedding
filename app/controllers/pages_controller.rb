@@ -3,11 +3,13 @@
 class PagesController < ApplicationController
   layout "pages"
   # while editing the details markup, uncomment the line below for quick access
-  before_action :validate_guest!, except: :home
+  # before_action :validate_guest!, except: %i[home faq]
 
   def home; end
 
   def details; end
+
+  def faq; end
 
   def calendar
     calendar = File.read(Rails.root.join("public", "calendar.ics"))
