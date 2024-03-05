@@ -3,7 +3,7 @@
 class PagesController < ApplicationController
   layout "pages"
   # while editing the details markup, uncomment the line below for quick access
-  # before_action :validate_guest!, except: %i[home faq]
+  before_action :validate_guest!, except: %i[home faq]
 
   def home; end
 
