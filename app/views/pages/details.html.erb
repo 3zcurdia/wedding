@@ -1,35 +1,64 @@
-<div class="relative">
-  <div class="bg-midnight-green text-white h-[100svh] flex md:items-center">
-    <div class="flex flex-col md:flex-row md:flex-row-reverse z-50 max-w-5xl mx-auto py-4">
-      <div class="w-full md:basis-1/2 px-8">
-        <p class="text-6xl font-serif font-extrabold capitalize mb-3">Hola <%= current_guest&.first_name %></p>
-        <p class="font-sans">Estamos muy emocionados de que nos acompañes en este día tan especial para nosotros. Aqui encontraras toda la información necesaria para que puedas disfrutar de nuestra boda.</p>
-        <p class="text-3xl pt-2 font-serif">Fecha</p>
-        <p class="font-sans">Sabado 27 de Julio 2024</p>
-        <p class="text-3xl pt-2 font-serif">Venue</p>
-        <p class="font-sans">Jardin Fuentes 22 Pedregal De Las Fuentes, Morelos, Mexico</p>
-        <p class="text-3xl pt-2 font-serif">Codigo de Vestimenta</p>
-        <p class="font-sans">Coctel</p>
-        <p class="text-3xl pt-2 font-serif">Regalos</p>
-        <p class="font-sans prose">
-          No contamos con mesa de regalos, pero si gustas podras hacer tu donativo en el dia de la boda.
-        </p>
-        <p class="font-sans">
-          <%= link_to calendar_path, class: "bg-white hover:bg-gray-200 text-midnight-green-500 hover:text-midnight-green-600 py-2 px-4 rounded-full flex items-center justify-center w-full mt-4 mb-8" do %>
-            <i class="fas fa-calendar-alt mr-2"></i>
-            Agrega el evento a tu calendario
-          <% end %>
-        </p>
+<div class="">
+  <div class="bg-midnight-green text-white flex md:items-center">
+    <div class="flex flex-col md:flex-row md:flex-row-reverse items-center z-50 mx-auto py-4">
+      <div class="">
+        <div class="mt-6 px-4">
+          <p class="text-6xl font-serif font-extrabold capitalize mb-12 text-center"><%= current_guest&.first_name %></p>
+          <p class="font-sans mb-4">
+            Estamos muy emocionados de que nos acompañes en este día tan especial para nosotros.
+          </p>
+
+          <p class="font-sans text-gray-400 tracking-wide">
+            Aqui encontraras toda la información necesaria para que puedas disfrutar de nuestra boda.
+          </p>
+        </div>
+
+        <div class="mt-6 px-4">
+          <p class="text-3xl font-serif mb-2 font-extrabold">¿Cuándo?</p>
+          <p class="font-sans">Sabado 27 de Julio 2024</p>
+        </div>
+
+        <div class="mt-6 px-4">
+          <p class="text-3xl font-serif mb-2 font-extrabold">Venue</p>
+          <p class="font-sans">Jardin Fuentes 22 Pedregal De Las Fuentes, Morelos, Mexico</p>
+        </div>
+
+        <div class="w-full md:basis-1/2 mt-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.023491874021!2d-99.1666649241962!3d18.886038982279942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce75c1118eea7d%3A0x48e0c6fa5b7cbc8!2sJard%C3%ADn%20Fuentes%2022!5e0!3m2!1sen!2smx!4v1707969671071!5m2!1sen!2smx" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="mt-6 px-4">
+       
+          <p class="text-3xl font-serif mb-2 font-extrabold">Código de vestimenta</p>
+          <p class="font-sans">Cocktail</p>
+        </div>
+
+        <div class="mt-6 px-4">
+          <p class="text-3xl font-serif mb-2 font-extrabold">Regalos</p>
+          <p class="font-sans">
+            No contamos con mesa de regalos, pero si gustas podras hacer tu donativo en el dia de la boda.
+          </p>
+        </div>
+
+        
+          <p class="font-sans">
+            <%= link_to calendar_path, class:"text-white bg-white hover:bg-gray-200 text-midnight-green-500 hover:text-midnight-green-600 py-2 px-4 rounded-full flex items-center justify-center w-full mt-4 mb-8" do %>
+              <i class="fas fa-calendar-alt mr-2"></i>
+              Agrega el evento a tu calendario
+            <% end %>
+          </p>
+     
+      
       </div>
-      <div class="w-full md:basis-1/2">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.023491874021!2d-99.1666649241962!3d18.886038982279942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce75c1118eea7d%3A0x48e0c6fa5b7cbc8!2sJard%C3%ADn%20Fuentes%2022!5e0!3m2!1sen!2smx!4v1707969671071!5m2!1sen!2smx" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      
     </div>
   </div>
+
   <div class="absolute bottom-0 left-0 z-0">
-    <%= image_tag("leaves-01.svg", class: "h-56 md:h-96 hidden md:block") %>
+    <%= image_tag("leaves-01.svg", class: "h-56 md:h-96 hidden opacity-20 md:block") %>
   </div>
+
   <div class="absolute top-0 right-0 z-0">
-    <%= image_tag("leaves-02.svg", class: "h-40 md:h-60 hidden md:block") %>
+    <%= image_tag("leaves-02.svg", class: "h-40 md:h-60 opacity-20 md:block") %>
   </div>
 </div>
