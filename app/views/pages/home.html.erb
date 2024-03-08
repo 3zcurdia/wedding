@@ -1,145 +1,51 @@
 <div class="relative">
   <div class="grid place-content-center h-[100svh] bg-midnight-green text-white">
     <div class="text-center z-50">
-      <p class="text-8xl font-serif font-extrabold my-2">Aidé & Luis</p>
-      <p class="text-4xl font-serif italic">Celebremos juntos </p>
+      <p class="text-8xl my-2 font-serif">
+        Aidé 
+        <span class="text-6xl sm:text-4xl mx-2 md:inline-block sm:block">&</span>    
+        Luis
+      </p>
+      <p class="text-4xl font-serif italic">Celebremos juntos</p>
       <p class="text-xl font-sans font-thin italic">27‧07‧2024</p>
     </div>
   </div>
   <div class="absolute bottom-0 left-0 z-0">
-    <%= image_tag("leaves-01.svg", class: "h-40 md:h-96") %>
+    <%= image_tag("leaves-01.svg", class: "h-40 md:h-96 opacity-30 md:block") %>
   </div>
   <div class="absolute top-0 right-0 z-0">
-    <%= image_tag("leaves-02.svg", class: "h-40 md:h-60") %>
+    <%= image_tag("leaves-02.svg", class: "h-40 md:h-60 opacity-30 md:block") %>
   </div>
 </div>
 
-<div class="flex flex-col md:flex-row gap-2 mx-auto max-w-7xl py-6 px-12">
-  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
+<div class="flex flex-col md:flex-row gap-2 mx-auto max-w-7xl py-6 px-6 sm:px-20">
+  <div class="flex flex-col items-center justify-center sm:items-start w-full md:w-1/2">
     <div class="h-80 w-80 md:h-[30rem] md:w-[30rem]">
       <%= image_tag("engagement-01.webp", height: "600px", width: "400px", class: "w-full h-full object-cover z-0 rounded-lg", loading: :lazy) %>
     </div>
   </div>
   <div class="flex flex-col items-center justify-center w-full md:w-1/2">
-    <p class="font-serif text-4xl py-6">El amor es paciente, el amor es amable. Siempre protege, siempre confía, siempre espera, siempre persevera.</p>
-
+    <p class="font-serif text-3xl sm:text-4xl">
+      El amor es paciente, el amor es amable.
+      Siempre protege, siempre confía, siempre espera, siempre persevera.   
+    </p>
   </div>
 </div>
 
-<div class="flex flex-col md:flex-row-reverse gap-2 mx-auto max-w-7xl py-6 px-12">
-  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
+<div class="flex flex-col md:flex-row-reverse gap-2 mx-auto max-w-7xl py-6 sm:px-20">
+  <div class="flex flex-col items-center justify-center sm:items-end w-full md:w-1/2">
     <div class="h-80 w-80 md:h-[30rem] md:w-[30rem]">
       <%= image_tag("engagement-02.webp", height: "600px", width: "400px", class: "w-full h-full object-cover z-0 rounded-lg", loading: :lazy) %>
     </div>
   </div>
-  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
-    <p class="font-serif text-3xl py-6">Ingresa tu numero telefonico</p>
-    <p class="prose">
-      ¿Listo para bailar bajo las estrellas y brindar por el amor? Haz clic en 'Ver detalles' con tu numero telefonico a continuación y únete a nosotros para celebrar la unión de Aidé y Luis. Tu presencia es la pieza que falta para completar nuestro día. Estamos ansiosos por compartir risas, alegría y recuerdos que perdurarán toda la vida. Hagamos de esta celebración algo tan mágico como el amor que nos ha reunido a todos. ¡Nos vemos allí!
+  <div class="flex flex-col items-start justify-center w-full md:w-1/2 px-6 sm:px-0 pt-8 sm:pt-0">
+    <p class="prose text-xl sm:text-2xl mb-4 sm:mb-0 text-center sm:text-left">
+      ¿Listo para bailar bajo las estrellas <br/>  y brindar por el amor?
     </p>
-    <%= form_with(url: guests_access_path, method: :post, scope: :guest, class: "w-3/4 flex flex-col") do |form| %>
-      <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-5 border-1 border-gray-300 rounded-full py-2 px-5 w-full" %>
+    <p class="text-base sm:text-lg mt-6">Ingresa tu número telefónico</p>
+    <%= form_with(url: guests_access_path, method: :post, scope: :guest, class: "w-full sm:w-3/4 flex flex-col") do |form| %>
+      <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-2 border-1 border-gray-300 rounded-full py-2 px-5 w-full" %>
       <%= form.submit "Ver detalles", class: "text-white bg-midnight-green-700 hover:bg-midnight-green-800 focus:outline-none focus:ring-4 focus:ring-midnight-green-300 font-medium rounded-full px-8 py-2.5 text-center my-5 dark:bg-midnight-green-600 dark:hover:bg-midnight-green-700 dark:focus:ring-midnight-green-800" %>
     <% end %>
   </div>
 </div>
-<!--
-
-<div class="flex flex-col md:flex-row gap-2 mx-auto max-w-7xl py-6 px-12">
-  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
-    <div class="h-80 w-80 md:h-[38rem] md:w-[25rem]">
-      <img
-        src={~p"/images/photo-03.webp"}
-        height="600px"
-        width="400px"
-        alt="Engagement trip"
-        loading="lazy"
-        class="w-full h-full object-cover z-0 rounded-lg"
-      />
-    </div>
-  </div>
-  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
-    <p class="font-serif text-3xl py-6">Lorem ipsum dolor</p>
-    <p class="prose">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit magna odio, id commodo neque
-      auctor ac. Aenean non libero non nulla vestibulum tempus. Curabitur dapibus velit vel magna vestibulum convallis.
-      Mauris in nunc mi. Curabitur condimentum tellus sit amet magna vestibulum malesuada. Donec a diam quam. Etiam
-      iaculis gravida aliquam. Quisque ut sapien leo. Nulla eros libero, scelerisque nec pulvinar ac, rutrum id felis.
-      Sed condimentum lectus in elit auctor hendrerit. Duis nec euismod justo, sit amet maximus lacus. Morbi dui neque,
-      suscipit ac purus id, ornare aliquet mi. Integer rhoncus, libero vitae suscipit lacinia, urna purus bibendum quam,
-      pulvinar fringilla neque quam nec nibh. Praesent mollis libero tellus, non accumsan lacus egestas eu.
-    </p>
-  </div>
-</div>
-<hr class="border-blue-700 border mx-auto max-w-7xl" />
-
-<div class="flex flex-col md:flex-row-reverse gap-2 mx-auto max-w-7xl py-6 px-12">
-  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
-    <div class="h-80 w-80 md:h-[38rem] md:w-[25rem]">
-      <img
-        src={~p"/images/photo-04.webp"}
-        height="600px"
-        width="400px"
-        alt="4th aniversary"
-        loading="lazy"
-        class="w-full h-full object-cover z-0 rounded-lg"
-      />
-    </div>
-  </div>
-  <div class="flex flex-col items-center justify-center w-full md:w-1/2">
-    <p class="font-serif text-3xl py-6">Lorem ipsum dolor</p>
-    <p class="prose">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam blandit magna odio, id commodo neque
-      auctor ac. Aenean non libero non nulla vestibulum tempus. Curabitur dapibus velit vel magna vestibulum convallis.
-      Mauris in nunc mi. Curabitur condimentum tellus sit amet magna vestibulum malesuada. Donec a diam quam. Etiam
-      iaculis gravida aliquam. Quisque ut sapien leo. Nulla eros libero, scelerisque nec pulvinar ac, rutrum id felis.
-      Sed condimentum lectus in elit auctor hendrerit. Duis nec euismod justo, sit amet maximus lacus. Morbi dui neque,
-      suscipit ac purus id, ornare aliquet mi. Integer rhoncus, libero vitae suscipit lacinia, urna purus bibendum quam,
-      pulvinar fringilla neque quam nec nibh. Praesent mollis libero tellus, non accumsan lacus egestas eu.
-    </p>
-  </div>
-</div>
-
-<div class="relative">
-  <div class="grid place-content-center h-screen bg-midnight-green text-white">
-    <div class="text-center z-50">
-      <p class="text-4xl font-serif font-thin tracking-wide p-10">
-        Esperamos que puedas acompañarnos
-      </p>
-      <a
-        href="#"
-        class="text-3xl font-serif font-thin py-4 px-20 border rounded-md hover:bg-blue-950"
-      >
-        RSVP
-      </a>
-    </div>
-  </div>
-  <div class="absolute top-0 left-0 z-0">
-    <img src={~p"/images/leaves-03.svg"} alt="" class="rotate-90 h-60 md:h-96" />
-  </div>
-  <div class="absolute bottom-0 right-0 z-0">
-    <img src={~p"/images/leaves-04.svg"} alt="" class="rotate-45 h-40 md:h-60" />
-  </div>
-</div>
-
-<div class="flex flex-col md:flex-row gap-2 mx-auto max-w-7xl pt-6 pb-20 px-12">
-  <div class="text-center w-full md:w-1/3">
-    <p class="text-2xl font-serif">Lorem ipsum</p>
-    <p class="italic text-md">lorem ipsum dolor quet sit amet</p>
-    <p class="text-2xl font-serif mt-10">Lorem ipsum</p>
-    <p class="italic text-md">lorem ipsum dolor quet sit amet</p>
-  </div>
-  <div class="text-center w-full md:w-1/3">
-    <p class="text-2xl font-serif">Lorem ipsum</p>
-    <p class="italic text-md">lorem ipsum dolor quet sit amet</p>
-    <p class="text-2xl font-serif mt-10">Lorem ipsum</p>
-    <p class="italic text-md">lorem ipsum dolor quet sit amet</p>
-  </div>
-  <div class="text-center w-full md:w-1/3">
-    <p class="text-2xl font-serif">Lorem ipsum</p>
-    <p class="italic text-md">lorem ipsum dolor quet sit amet</p>
-    <p class="text-2xl font-serif mt-10">Lorem ipsum</p>
-    <p class="italic text-md">lorem ipsum dolor quet sit amet</p>
-  </div>
-</div>
--->
