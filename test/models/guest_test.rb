@@ -19,21 +19,21 @@ class GuestTest < ActiveSupport::TestCase
     guest.first_name = nil
 
     refute guest.valid?
-    assert_equal ["can't be blank"], guest.errors[:first_name]
+    assert_equal ["no puede estar en blanco"], guest.errors[:first_name]
   end
 
   def test_invalid_without_last_name
     guest.last_name = nil
 
     refute guest.valid?
-    assert_equal ["can't be blank"], guest.errors[:last_name]
+    assert_equal ["no puede estar en blanco"], guest.errors[:last_name]
   end
 
   def test_invalid_phones
     guest.phone = "ABCDEFGHIJKL"
 
     refute guest.valid?
-    assert_equal ["can't be blank"], guest.errors[:phone]
+    assert_equal ["no puede estar en blanco"], guest.errors[:phone]
   end
 
   def test_full_name

@@ -10,7 +10,9 @@
           </p>
 
           <p class="font-sans mb-4">
-            Tu invitación tiene <b>3 boletos</b> incluyendote a ti y Juan
+            Tu invitación es <b><%= t "tickets", count: total_plus_ones(current_guest) %></b>.
+            <br/>
+            <%= companion_names(current_guest) %>
           </p>
 
           <p class="font-sans text-gray-400 tracking-wide">

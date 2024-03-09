@@ -27,6 +27,6 @@ class Admin::PasswordsControllerTest < ActionDispatch::IntegrationTest
                     password_confirmation: "Secret6*4*2*" }
 
     assert_response :unprocessable_entity
-    assert_select "li", /Password challenge is invalid/
+    assert_select "li", /Password challenge no es válido/
   end
 end

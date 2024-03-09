@@ -1,0 +1,15 @@
+es:
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " y "
+      last_word_connector: ", y "
+  activerecord:
+    errors:
+      messages:
+        blank: "no puede estar en blanco"
+        invalid: "no es válido"
+  tickets:
+    zero: "solo para ti"
+    one: "para ti y un acompañante"
+    other: "para ti y %{count} personas"

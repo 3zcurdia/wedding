@@ -37,6 +37,7 @@ module Wedding
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.i18n.default_locale = :es
     config.generators.system_tests = nil
   end
 end

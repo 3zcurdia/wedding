@@ -15,6 +15,6 @@ class AdminUserTest < ActiveSupport::TestCase
     admin.email = nil
 
     refute admin.valid?
-    assert_equal ["can't be blank", "is invalid"], admin.errors[:email]
+    assert_equal ["no puede estar en blanco", "no es válido"], admin.errors[:email]
   end
 end

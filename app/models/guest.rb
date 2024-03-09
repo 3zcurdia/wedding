@@ -36,10 +36,6 @@ class Guest < ApplicationRecord
     end
   end
 
-  def total_plus_ones
-    @total_plus_ones ||= plus_ones_count + companion_guests.count
-  end
-
   def full_name
     "#{first_name} #{last_name}"
   end
