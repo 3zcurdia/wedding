@@ -2,7 +2,7 @@
 
 module GuestHelper
   def total_plus_ones(guest)
-    guest.plus_ones_count + guest.companion_guests.count
+    (guest.plus_ones_count || 0) + (guest.companion_guests.count || 0)
   end
 
   def companion_names(guest)
