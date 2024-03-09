@@ -36,10 +36,10 @@
         <% @guests.each do |guest| %>
           <tr id="<%= dom_id guest %>">
             <td class="px-4 py-2"><%= guest.full_name %></td>
-            <td class="px-4 py-2"><%= guest.phone %></td>
+            <td class="px-4 py-2"><%= number_to_phone guest.phone %></td>
             <td class="px-4 py-2"><%= guest.plus_ones_count %></td>
-            <td class="px-4 py-2"><%= ld guest.last_viewed_at %></td>
-            <td class="px-4 py-2"><%= ld guest.confirmed_at %></td>
+            <td class="px-4 py-2 capitalize"><%= ld guest.last_viewed_at, format: :short %></td>
+            <td class="px-4 py-2 capitalize"><%= ld guest.confirmed_at, format: :short %></td>
             <td class="px-4 py-2">
               <div class="flex flex-row gap-2 justify-end">
                 <%= link_to "Show", admin_guest_path(guest), class: "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer p-2 rounded" %>
