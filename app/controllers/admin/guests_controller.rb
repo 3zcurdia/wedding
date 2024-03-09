@@ -5,7 +5,10 @@ module Admin
     before_action :set_guest, only: %i[show edit update destroy]
 
     def index
-      @pagy, @guests = pagy(Guest.all, page: params[:page])
+      query = Guest.all
+      @guests_count = query.count
+      @plus_ones_count = query.sum(:plus_ones_count)
+      @pagy, @guests = pagy(query, page: params[:page])
     end
 
     def show; end

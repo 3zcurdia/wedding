@@ -8,7 +8,7 @@ class Guest < ApplicationRecord
 
   validates :first_name, :last_name, :phone, presence: true
   validates :phone, uniqueness: true
-  normalizes :phone, with: ->(value) { value.gsub(/\D/, "") }
+  normalizes :phone, with: ->(value) { value.gsub(/\D/, "").strip }
 
   class << self
     def import_csv(file)
@@ -22,6 +22,8 @@ class Guest < ApplicationRecord
       Guest.transaction do
         CSV.foreach(file.path, headers: true) do |row|
           data = row.to_h.symbolize_keys
+          next if data[:phone].blank?
+
           Guest.find_or_create_by!(phone: data[:phone]) do |guest|
             guest.first_name = data[:first_name]
             guest.last_name = data[:last_name]
