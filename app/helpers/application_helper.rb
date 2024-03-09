@@ -3,6 +3,12 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def ld(date, **options)
+    return if date.blank?
+
+    l(date, **options)
+  end
+
   def flash_class(type)
     case type
     when "success"
