@@ -4,6 +4,7 @@ module Guests
   class AccessesController < ApplicationController
     def create
       if (guest = Guest.with_phone(guest_params[:phone]))
+        guest.viewed!
         session[:guest_id] = guest.id
         redirect_to details_url
       else

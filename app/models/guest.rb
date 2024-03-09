@@ -42,6 +42,10 @@ class Guest < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def viewed!
+    update!(last_viewed_at: Time.zone.now)
+  end
+
   def confirm!
     update!(confirmed_at: Time.zone.now)
   end
