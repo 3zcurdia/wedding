@@ -3,10 +3,10 @@
 module ApplicationHelper
   include Pagy::Frontend
 
-  def ld(date, **options)
+  def ld(date, **)
     return if date.blank?
 
-    l(date, **options)
+    l(date, **)
   end
 
   def flash_class(type)

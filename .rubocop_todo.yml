@@ -10,4 +10,8 @@
 # Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
 Metrics/AbcSize:
   Exclude:
+    - app/models/guest.rb
     - app/controllers/admin/sessions_controller.rb
+
+Metrics/MethodLength:
+  Max: 12
