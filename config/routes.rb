@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "details", to: "pages#details"
   get "faq", to: "pages#faq"
   get "calendar", to: "pages#calendar", as: :calendar
+  resource :rsvp, only: %i[new show create]
 
   namespace :admin do
     get "/", to: "home#index"
