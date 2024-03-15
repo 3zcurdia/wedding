@@ -107,7 +107,7 @@
   /* border-right: 2px solid #ccc; */
   /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff, rgba(255, 255, 255, 0)); Degradado blanco */
   /* box-shadow:  -8px 1px 1px 0px #0e3e50, 20px 0px 0px 0px #0e3e50, 0 0 10px #00000080; */
-  box-shadow:  -8px 1px 1px 0px #FFF7ED, 20px 0px 0px 0px #FFF7ED, 0 0 8px #00000050;
+  box-shadow:  -8px 1px 1px 0px #FFF7ED, 20px 0px 0px 0px #FFF7ED, 0 0 8px #BD945A50;
   /* Sombra interior */
   /* inset 0 -10px 10px rgba(0, 0, 0, 0.5); Sombra inferior */
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1) inset; */
@@ -153,7 +153,15 @@
 }
 
 
-.card-border {
+.card-content-border {
+  border: 8px solid #BD945A;
+  @apply bg-orange-50;
+  @apply p-[15px];
+  @apply sm:p-[30px]
+  /* padding: 30px; */
+}
+
+.card-border1 {
   position: absolute;
   /* content: ""; */
   width: 100%;
