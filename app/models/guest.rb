@@ -38,6 +38,10 @@ class Guest < ApplicationRecord
     end
   end
 
+  def main?
+    companion_id.blank?
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end
