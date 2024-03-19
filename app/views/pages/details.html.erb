@@ -1,5 +1,5 @@
 <div class="">
-  <div class="bg-midnight-green text-white flex md:items-center">
+  <div class="flex md:items-center">
     <div class="flex flex-col md:flex-row md:flex-row-reverse items-center z-50 mx-auto py-4">
       <div class="">
         <div class="mt-6 px-4">
@@ -15,7 +15,7 @@
             <%= companion_names(current_guest) %>
           </p>
 
-          <p class="font-sans text-gray-400 tracking-wide">
+          <p class="font-sans text-gray-600 tracking-wide">
             Aqui encontraras toda la información necesaria para que puedas disfrutar de nuestra boda.
           </p>
         </div>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="mt-6 px-4">
-          <%= link_to calendar_path, class: "bg-white hover:bg-gray-200 text-midnight-green-500 hover:text-midnight-green-600 py-2 px-4 rounded-full flex items-center justify-center w-full mt-4 mb-8" do %>
+          <%= link_to calendar_path, class: "primary-button rounded-full" do %>
             <i class="fas fa-calendar-alt mr-2"></i>
             Agrega el evento a tu calendario
           <% end %>
@@ -57,14 +57,14 @@
 
         <div class="mt-6 px-4 pb-20">
           <p class="text-3xl font-serif mb-2 font-extrabold">¿Aún tienes dudas?</p>
-          <%= link_to faq_path, target: "_blank", class: "text-midnight-green-500 hover:text-pink-500 pl-1 text-base text-white sm:max-w-prose inline underline" do %>
+          <%= link_to faq_path, target: "_blank", class: "text-green-950 hover:cursor-pointer hover:text-green-500 pl-1 sm:max-w-prose inline underline" do %>
             Consulta la sección de preguntas frecuentes
           <% end %>
         </div>
 
 
         <div class="sm:flex sm:items-center sm:justify-center">
-          <%= link_to "#", class: "fixed bottom-0 sm:bottom-5 bg-white shadow-cyan-500 text-midnight-green-600 w-full sm:w-4/6 sm:max-w-prose sm:rounded py-3 text-center font-bold tracking-wider uppercase text-base" do %>
+          <%= link_to "#", class: "fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base" do %>
             Confirmar asistencia
           <% end %>
         </div>
