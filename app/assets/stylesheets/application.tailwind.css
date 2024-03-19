@@ -3,3 +3,31 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "pagy_nav";
+
+/* :root {
+  --bg-primary: #266844;
+  --text-primary: #333738;
+  --color-accent: #ffc107;
+} */
+
+@layer utilities {
+  .card-border {
+    @apply border-4 p-4 sm:p-8 border-green-800/70 rounded-tl-lg rounded-br-lg;
+  }
+
+  .box-shadow-ribbon {
+    box-shadow: -8px 1px 1px 0px #FFF7ED, 20px 0px 0px 0px #FFF7ED, 0 0 8px #BD945A50;
+  }
+
+  .leaf-box-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1.25rem;
+    /* Adjust the height of the gradient as needed */
+    background: linear-gradient(to bottom, #FFF7ED4D, #FFF7ED);
+    /* Adjust the colors and opacity stops as needed */
+  }
+}
