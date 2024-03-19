@@ -23,7 +23,7 @@
 
 <div class="flex justify-center items-center mx-auto py-20 px-4">
   <div class="flex flex-col items-center justify-center w-full max-w-screen-sm bg-orange-50 card-border">
-    <p class="font-serif text-2xl md:text-4xl text-center py-10 px-8">
+    <p class="font-serif text-2xl md:text-4xl text-center py-10">
       Todo comienza con un punto.
       <br/>
       - Wassily Kandinsky
@@ -41,7 +41,7 @@
       <p class="font-thin sm:text-lg mt-6">Para ver los detalles del evento ingresa tu número telefónico</p>
       <%= form_with(url: guests_access_path, method: :post, scope: :guest, class: "w-full flex flex-col") do |form| %>
         <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full" %>
-        <%= form.submit "Ver detalles", class: "tracking-wider text-white bg-green-900 hover:bg-green-800 hover:cursor-pointer focus:outline-none focus:ring-4 focus:ring-green-400 rounded-tl-lg rounded-br-lg px-8 py-2.5 text-center my-5 shadow-sm shadow-gray-500" %>
+        <%= form.submit "Ver detalles", class: "primary-button font-bold rounded-tl-lg rounded-br-lg my-5" %>
       <% end %>
     </div>
 
