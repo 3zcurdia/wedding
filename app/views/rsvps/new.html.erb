@@ -12,7 +12,7 @@
   </div>
   <%= form_with(model: @guest, url: rsvp_path, class: "w-full") do |form| %>
     <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full", value: number_to_phone(@guest.phone) %>
-    <%= form.number_field :plus_ones_count, min: 0, max: @guest.plus_ones_count, class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full" %>
+    <%= form.number_field :confirmed_plus_ones, min: 0, max: @guest.plus_ones_count, class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full" %>
     <%= form.submit "Confirmar asistencia", class: "primary-button font-bold rounded-tl-xlg rounded-br-lg my-5" %>
   <% end %>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_09_030039) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_15_043830) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_09_030039) do
     t.datetime "updated_at", null: false
     t.integer "companion_id"
     t.datetime "last_viewed_at"
+    t.integer "confirmed_plus_ones", default: 0
     t.index ["companion_id"], name: "index_guests_on_companion_id"
     t.index ["phone"], name: "index_guests_on_phone", unique: true
   end
