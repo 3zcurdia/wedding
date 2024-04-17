@@ -40,6 +40,12 @@ class Guest < ApplicationRecord
     end
   end
 
+  def available_plus_ones
+    return 0 unless main?
+
+    companion_guests.count + plus_ones_count
+  end
+
   def main?
     companion_id.blank?
   end

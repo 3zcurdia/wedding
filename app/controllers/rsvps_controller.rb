@@ -10,7 +10,7 @@ class RsvpsController < ApplicationController
   def new; end
 
   def create
-    if @guest.update(rsvp_params)
+    if @guest.update(rsvp_params) && @guest.confirm!
       redirect_to rsvp_url, notice: "RSVP was successfully updated."
     else
       render :new, status: :unprocessable_entity
