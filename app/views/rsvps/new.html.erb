@@ -34,7 +34,7 @@
         </button>
         </div>
         <p class="font-sans mt-3">De los cuales nos encantaria que nos acompañara:</p>
-        <ul class="list-disc ml-2">
+        <ul class="list-disc ml-2 min-h-8">
           <% @guest.companion_guests.each do |companion| %>
             <li class="ml-4 font-semibold" data-companion-list-target="companion"><%= companion.full_name %></li>
           <% end %>
