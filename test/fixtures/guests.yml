@@ -4,7 +4,7 @@ joe_doe:
   first_name: Joe
   last_name: Doe
   phone: 5555555551
-  plus_ones_count: 1
+  plus_ones_count: 2
 
 jane_doe:
   first_name: Jane

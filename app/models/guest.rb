@@ -6,6 +6,8 @@ class Guest < ApplicationRecord
   has_many :companion_guests, class_name: "Guest", foreign_key: :companion_id
   belongs_to :companion, class_name: "Guest", optional: true
 
+  scope :confirmed, -> { where.not(confirmed_at: nil) }
+
   validates :first_name, :last_name, :phone, presence: true
   validates :phone, uniqueness: true
   normalizes :phone, with: ->(value) { value.gsub(/\D/, "").strip }
@@ -36,6 +38,16 @@ class Guest < ApplicationRecord
     def with_phone(phone)
       find_by(phone: phone.gsub(/\D/, ""))
     end
+  end
+
+  def available_plus_ones
+    return 0 unless main?
+
+    companion_guests.count + plus_ones_count
+  end
+
+  def main?
+    companion_id.blank?
   end
 
   def full_name

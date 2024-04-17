@@ -1,0 +1,48 @@
+<div class="flex flex-col">
+  <div class="mx-auto py-4 px-8">
+    <div class="mt-6 py-4">
+      <p class="text-5xl font-serif font-extrabold text-green-900 capitalize text-center"><%= @guest.first_name %><br/> confirma tú asistencia</p>
+    </div>
+    <div class="mt-6">
+      <p class="text-3xl font-serif mb-2 font-extrabold">¿Cuándo?</p>
+      <p class="font-sans">Sabado 27 de Julio 2024</p>
+    </div>
+    <div class="my-6">
+      <p class="text-3xl font-serif mb-2 font-extrabold">Boletos</p>
+      <p class="font-sans">Para confirmar tu asistencia marca el numero de boletos que vas a utilizar.</p>
+    </div>
+    <%= form_with(model: @guest, method: :post, url: rsvp_path, class: "w-full") do |form| %>
+      <div class="my-2">
+        <%= form.label :phone, "Confirma tu numero telefonico", class: "fonts-sans" %>
+        <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full", value: number_to_phone(@guest.phone) %>
+      </div>
+
+      <% if @guest.main? %>
+      <div class="my-2" data-controller="companion-list" data-companion-list-disabled-class="line-through">
+        <%= form.label :plus_ones_count, "Confirma tu numero de acompañantes", class: "fonts-sans" %>
+        <div class="relative flex items-center mt-1" data-controller="numeric-input">
+        <button type="button" class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-9" data-action="numeric-input#decrement companion-list#updateList">
+          <svg class="w-3 h-2 text-green-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+          </svg>
+        </button>
+        <%= form.number_field :confirmed_plus_ones, min: 0, max: @guest.available_plus_ones, value: @guest.available_plus_ones, class: "bg-gray-50 border-x-0 border-gray-300 h-9 text-center text-green-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full py-2.5", data: { numeric_input_target: "input", companion_list_target: "input" } %>
+        <button type="button" class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-9" data-action="numeric-input#increment companion-list#updateList">
+          <svg class="w-3 h-2 text-green-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+          </svg>
+        </button>
+        </div>
+        <p class="font-sans mt-3">De los cuales nos encantaria que nos acompañara:</p>
+        <ul class="list-disc ml-2">
+          <% @guest.companion_guests.each do |companion| %>
+            <li class="ml-4 font-semibold" data-companion-list-target="companion"><%= companion.full_name %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <%= form.submit "Confirmar asistencia", class: "-ml-8 fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base" %>
+    <% end %>
+  </div>
+</div>
