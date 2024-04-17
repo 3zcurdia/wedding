@@ -12,7 +12,6 @@ export default class extends Controller {
   connect() {
     this.minValue = this.inputTarget.getAttribute("min")
     this.maxValue = this.inputTarget.getAttribute("max")
-    this.inputTarget.disabled = true
   }
 
   increment() {
