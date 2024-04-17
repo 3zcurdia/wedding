@@ -8,6 +8,8 @@
       <p class="font-sans mb-4">
       <% if current_guest.confirmed? %>
         Tu invitación esta <b>confirmada <i><%= t "tickets", count: current_guest.confirmed_plus_ones %></i></b>.
+        <br/>
+        En caso de que necesites hacer algún cambio, por favor contáctanos. De cualquier manera nuestra wedding planner se pondrá en contacto contigo para confirmar los detalles.
       <% else %>
         Tu invitación es <b><%= t "tickets", count: total_plus_ones(current_guest) %></b>.
         <br/>
