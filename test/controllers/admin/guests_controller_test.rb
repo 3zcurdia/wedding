@@ -24,7 +24,7 @@ class Admin::GuestsControllerTest < ActionDispatch::IntegrationTest
       post admin_guests_url, params: { guest: valid_attributes }
     end
 
-    assert_redirected_to admin_guest_url(Guest.last)
+    assert_redirected_to admin_guests_url
   end
 
   test "should show guest" do
@@ -39,14 +39,14 @@ class Admin::GuestsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update guest" do
     patch admin_guest_url(@guest), params: { guest: { plus_ones_count: 0 } }
-    assert_redirected_to admin_guest_url(@guest)
+    assert_redirected_to admin_guests_url
     assert_equal 0, @guest.reload.plus_ones_count
   end
 
   test "should update guest with companion" do
     companion = guests(:jane_doe)
     patch admin_guest_url(@guest), params: { guest: { companion_id: companion.id } }
-    assert_redirected_to admin_guest_url(@guest)
+    assert_redirected_to admin_guests_url
     assert_equal companion.id, @guest.reload.companion_id
   end
 
