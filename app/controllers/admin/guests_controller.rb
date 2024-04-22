@@ -5,10 +5,14 @@ module Admin
     before_action :set_guest, only: %i[show edit update destroy]
 
     def index
-      query = Guest.all
-      @guests_count = query.count
-      @confirmed_plus_ones_count = query.confirmed.sum(:confirmed_plus_ones)
-      @plus_ones_count = query.sum(:plus_ones_count)
+      @guests_count = Guest.count
+      @confirmed_plus_ones_count = Guest.confirmed.sum(:confirmed_plus_ones)
+      @plus_ones_count = Guest.sum(:plus_ones_count)
+      query = if params[:search].present?
+                Guest.search(params[:search])
+              else
+                Guest.all
+              end
       @pagy, @guests = pagy(query, page: params[:page])
     end
 
@@ -25,7 +29,7 @@ module Admin
 
       respond_to do |format|
         if @guest.save
-          format.html { redirect_to admin_guest_url(@guest), notice: "Guest was successfully created." }
+          format.html { redirect_to admin_guests_url, notice: "Guest was successfully created." }
         else
           format.html { render :new, status: :unprocessable_entity }
         end
@@ -35,7 +39,7 @@ module Admin
     def update
       respond_to do |format|
         if @guest.update(guest_params)
-          format.html { redirect_to admin_guest_url(@guest), notice: "Guest was successfully updated." }
+          format.html { redirect_to admin_guests_url, notice: "Guest was successfully updated." }
         else
           format.html { render :edit, status: :unprocessable_entity }
         end

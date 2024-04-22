@@ -34,7 +34,7 @@
   </div>
 
   <div class="block py-2">
-    <%= form.label :companion, class: "block py-1" %>
+    <%= form.label :companion_of, class: "block py-1" %>
     <%= form.collection_select :companion_id, Guest.order(:first_name), :id, :full_name, { include_blank: true }, class: "border w-full py-2 px-2 rounded-md hover:border-blue-600 ring-1 ring-inset ring-gray-300" %>
   </div>
 

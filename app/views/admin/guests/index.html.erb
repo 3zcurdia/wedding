@@ -3,18 +3,32 @@
     <h2 class="text-4xl font-bold">Guests</h2>
     <p class="text-gray-600"><%= @guests_count %> guests with <%= @plus_ones_count%> plus ones</p>
     <p class="text-gray-700 font-bold">Total: <%= @guests_count + @plus_ones_count %> </p>
-    <p class="text-gray-700 font-bold">Confirmed: <%= @confirmed_guests_count %> </p>
+    <p class="text-gray-700 font-bold">Confirmed: <%= @confirmed_guests_count.to_i %> </p>
   </div>
+
+  <div class="py-4">
+  <%= form_with(url: admin_guests_path, method: :get) do %>
+    <div class="flex flex-row gap-2 items-center relative">
+      <%= text_field_tag :search, params[:search], class: "border-2 border-gray-300 rounded-full py-2 pl-10 pr-5" %>
+      <span class="absolute left-3 top-1/2 transform -translate-y-1/2">
+        <i class="fa fa-search"></i>
+      </span>
+    </div>
+  <% end %>
+</div>
 
   <div class="flex flex-row gap-2 items-center">
     <%= form_with(url: admin_guests_imports_path, scope: :guests, method: :post, local: true, multipart: true, data: { controller: "autoupload-form" }) do |f| %>
       <%= f.file_field :file, accept: "text/csv", class: "hidden", data: { autoupload_form_target: "input", action: "change->autoupload-form#upload" } %>
-      <button type="button" data-autoupload-form-target="button" data-action="click->autoupload-form#select" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded cursor-pointer">
+      <button type="button" data-autoupload-form-target="button" data-action="click->autoupload-form#select" class="bg-teal-800 hover:bg-teal-700 text-white py-2 px-4 rounded cursor-pointer">
         <i class="fa-solid fa-file-arrow-up"></i>
         Upload CSV
       </button>
     <% end %>
-    <%= link_to "New guest", new_admin_guest_path, class: "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer p-2 rounded" %>
+    <%= link_to new_admin_guest_path, class: "bg-teal-800 hover:bg-teal-700 text-white cursor-pointer p-2 rounded" do %>
+      <i class="fa-solid fa-plus"></i>
+      Add Guest
+    <% end %>
   </div>
 </div>
 
@@ -23,11 +37,11 @@
     <p class="text-center text-3xl">No guests found</p>
   <% else %>
     <table class="w-full">
-      <thead class="">
+      <thead class="bg-teal-800 text-white">
         <tr>
-          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2 ">Name</th>
           <th class="px-4 py-2">Phone</th>
-          <th class="px-4 py-2">Confirmed/Available Plus Ones</th>
+          <th class="px-4 py-2">Confirmed/Available</th>
           <th class="px-4 py-2">Last time viewed</th>
           <th class="px-4 py-2">Confirmed at</th>
           <th class="px-4 py-2">Actions</th>
@@ -35,24 +49,31 @@
       </thead>
       <tbody id="guests">
         <% @guests.each do |guest| %>
-          <tr id="<%= dom_id guest %>">
+          <tr id="<%= dom_id guest %>" class="border-t border-gray-300 hover:bg-gray-200 transition-colors duration-200">
             <td class="px-4 py-2"><%= guest.full_name %></td>
             <td class="px-4 py-2"><%= number_to_phone guest.phone %></td>
-            <td class="px-4 py-2"><%= guest.confirmed_plus_ones %>/<%= guest.plus_ones_count %></td>
+            <td class="px-4 py-2 text-center"><%= guest.confirmed_plus_ones %>/<%= guest.plus_ones_count.to_i %></td>
             <td class="px-4 py-2 capitalize"><%= ld guest.last_viewed_at, format: :short %></td>
             <td class="px-4 py-2 capitalize"><%= ld guest.confirmed_at, format: :short %></td>
             <td class="px-4 py-2">
               <div class="flex flex-row gap-2 justify-end">
-                <%= link_to "Show", admin_guest_path(guest), class: "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer p-2 rounded" %>
-                <%= link_to "Edit", edit_admin_guest_path(guest), class: "bg-blue-600 hover:bg-blue-700 text-white cursor-pointer p-2 rounded" %>
-                <%= button_to "Delete", admin_guest_path(guest), method: :delete, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+                <%= link_to admin_guest_path(guest), class: "text-sky-900 hover:text-sky-700 cursor-pointer" do %>
+                  <i class="fas fa-eye"></i>
+                <% end %>
+                <%= link_to edit_admin_guest_path(guest), class: "text-sky-900 hover:text-sky-700 cursor-pointer" do %>
+                  <i class="fas fa-edit"></i>
+                <% end %>
+                <%= button_to admin_guest_path(guest), method: :delete, class: "text-red-500 hover:text-red-700 cursor-pointer" do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
               </div>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
-    <div class="flex flex-row gap-2 py-5 justify-end">
+    </table>
+    <div class="flex flex-row gap-2 py-5 justify-end items-center">
       <%== pagy_info(@pagy) %>
       <%== pagy_nav(@pagy) %>
     </div>
