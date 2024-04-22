@@ -9,8 +9,8 @@ class Guest < ApplicationRecord
 
   scope :confirmed, -> { where.not(confirmed_at: nil) }
 
-  validates :first_name, :last_name, :phone, presence: true
-  validates :phone, uniqueness: true
+  validates :first_name, :last_name, presence: true
+  validates :phone, presence: true, uniqueness: true, if: :main?
   normalizes :phone, with: ->(value) { value.gsub(/\D/, "").strip }
 
   litesearch do |schema|
