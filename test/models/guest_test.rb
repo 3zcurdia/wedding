@@ -36,6 +36,13 @@ class GuestTest < ActiveSupport::TestCase
     assert_equal ["no puede estar en blanco"], guest.errors[:phone]
   end
 
+  def test_companion_guest_withou_phone
+    guest.companion_id = guests(:jane_doe).id
+    guest.phone = nil
+
+    assert guest.valid?
+  end
+
   def test_full_name
     assert_equal "Joe Doe", guest.full_name
   end

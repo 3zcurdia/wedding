@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_15_043830) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_22_195643) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_043830) do
   create_table "guests", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "phone", null: false
+    t.string "phone"
     t.integer "plus_ones_count", default: 0
     t.datetime "confirmed_at"
     t.datetime "created_at", null: false
@@ -34,6 +34,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_15_043830) do
     t.index ["companion_id"], name: "index_guests_on_companion_id"
     t.index ["phone"], name: "index_guests_on_phone", unique: true
   end
+
+# Could not dump table "guests_search_idx" because of following StandardError
+#   Unknown type '' for column 'first_name'
+
+# Could not dump table "guests_search_idx_config" because of following StandardError
+#   Unknown type '' for column 'k'
+
+  create_table "guests_search_idx_data", force: :cascade do |t|
+    t.binary "block"
+  end
+
+  create_table "guests_search_idx_docsize", force: :cascade do |t|
+    t.binary "sz"
+    t.integer "origin"
+  end
+
+# Could not dump table "guests_search_idx_idx" because of following StandardError
+#   Unknown type '' for column 'segid'
+
+# Could not dump table "guests_search_idx_instance" because of following StandardError
+#   Unknown type '' for column 'term'
+
+# Could not dump table "guests_search_idx_row" because of following StandardError
+#   Unknown type '' for column 'term'
 
   create_table "sessions", force: :cascade do |t|
     t.string "record_type", null: false
