@@ -19,6 +19,10 @@
     @apply text-white bg-green-900 hover:bg-green-800 hover:cursor-pointer px-8 py-2.5 text-center shadow-sm shadow-gray-500;
   }
 
+  .secondary-button {
+    @apply text-green-800 bg-orange-50 hover:bg-green-800 hover:cursor-pointer px-8 py-2.5 text-center shadow-sm shadow-gray-500;
+  }
+
   .box-shadow-ribbon {
     box-shadow: -8px 1px 1px 0px #FFF7ED, 20px 0px 0px 0px #FFF7ED, 0 0 8px #BD945A50;
   }

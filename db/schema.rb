@@ -34,30 +34,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_213343) do
     t.index ["companion_id"], name: "index_guests_on_companion_id"
   end
 
-# Could not dump table "guests_search_idx" because of following StandardError
-#   Unknown type '' for column 'first_name'
-
-# Could not dump table "guests_search_idx_config" because of following StandardError
-#   Unknown type '' for column 'k'
-
-  create_table "guests_search_idx_data", force: :cascade do |t|
-    t.binary "block"
-  end
-
-  create_table "guests_search_idx_docsize", force: :cascade do |t|
-    t.binary "sz"
-    t.integer "origin"
-  end
-
-# Could not dump table "guests_search_idx_idx" because of following StandardError
-#   Unknown type '' for column 'segid'
-
-# Could not dump table "guests_search_idx_instance" because of following StandardError
-#   Unknown type '' for column 'term'
-
-# Could not dump table "guests_search_idx_row" because of following StandardError
-#   Unknown type '' for column 'term'
-
   create_table "sessions", force: :cascade do |t|
     t.string "record_type", null: false
     t.integer "record_id", null: false
