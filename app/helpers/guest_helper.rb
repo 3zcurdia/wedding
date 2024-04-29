@@ -9,6 +9,6 @@ module GuestHelper
     return if guest.companion_guests.empty?
 
     companions = guest.companion_guests.pluck(:first_name).map(&:capitalize).to_sentence
-    "Dentro de tus acompañantes estamos considerando a #{companions}"
+    "Dentro de tus acompañantes estamos considerando a #{companions}."
   end
 end

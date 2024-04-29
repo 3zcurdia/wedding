@@ -1,11 +1,11 @@
 <div class="flex flex-col">
   <div class="mx-auto py-4 px-8">
     <div class="mt-6 py-4">
-      <p class="text-5xl font-serif font-extrabold text-green-900 capitalize text-center"><%= @guest.first_name %><br/> confirma tú asistencia</p>
+      <p class="text-5xl font-serif font-extrabold text-emerald-900 capitalize text-center"><%= @guest.first_name %><br/> confirma tú asistencia</p>
     </div>
     <div class="mt-6">
       <p class="text-3xl font-serif mb-2 font-extrabold">¿Cuándo?</p>
-      <p class="font-sans">Sabado 27 de Julio 2024</p>
+      <p class="font-sans">Sabado 27 de Julio 2024, 4:00 PM</p>
     </div>
     <div class="my-6">
       <p class="text-3xl font-serif mb-2 font-extrabold">Boletos</p>
@@ -22,13 +22,13 @@
         <%= form.label :plus_ones_count, "Confirma tu numero de acompañantes", class: "fonts-sans" %>
         <div class="relative flex items-center mt-1" data-controller="numeric-input">
         <button type="button" class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-9" data-action="numeric-input#decrement companion-list#updateList">
-          <svg class="w-3 h-2 text-green-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+          <svg class="w-3 h-2 text-emerald-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
           </svg>
         </button>
-        <%= form.number_field :confirmed_plus_ones, min: 0, max: @guest.available_plus_ones, value: @guest.available_plus_ones, class: "bg-gray-50 border-x-0 border-gray-300 h-9 text-center text-green-900 text-sm focus:ring-green-500 focus:border-green-500 block w-full py-2.5", data: { numeric_input_target: "input", companion_list_target: "input" } %>
+        <%= form.number_field :confirmed_plus_ones, min: 0, max: @guest.available_plus_ones, value: @guest.available_plus_ones, class: "bg-gray-50 border-x-0 border-gray-300 h-9 text-center text-emerald-900 text-sm focus:ring-emerald-500 focus:border-emerald-500 block w-full py-2.5", data: { numeric_input_target: "input", companion_list_target: "input" } %>
         <button type="button" class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-9" data-action="numeric-input#increment companion-list#updateList">
-          <svg class="w-3 h-2 text-green-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+          <svg class="w-3 h-2 text-emerald-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
           </svg>
         </button>

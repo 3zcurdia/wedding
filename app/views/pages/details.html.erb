@@ -1,141 +1,99 @@
-<div>
-  <div class="bg-green-800 py-1 text-orange-50">
-    <div class="px-6">
-      <div class="py-4 mt-6r mb-6">
-        <p class="text-6xl font-serif font-extrabold capitalize text-center text-orange-50">
-          <%= current_guest&.first_name %>
-        </p>
-      </div>
+<div class="flex flex-col min-h-screen text-center">
+  <div class="px-6 mt-8 mb-6">
+    <p class="text-6xl font-serif font-extrabold capitalize">
+      <%= current_guest&.first_name %>
+    </p>
+  </div>
+  <!-- Welcome message -->
+  <div class="px-6 mb-4 font-sans text-lg">
+    Estamos muy emocionados de contar contigo en este día tan especial.
+  </div>
 
-      <!-- Welcome message -->
-      <p class="font-sans text-lg mb-4 text-orange-50">
-        Estamos muy emocionados de que nos acompañes en este día tan especial para nosotros.
-      </p>
+  <!-- Confirmation status -->
+  <div class="px-6 mb-4 font-sans text-lg">
+    <% if current_guest.confirmed? %>
+      Tu invitación está <b>confirmada <i><%= t("tickets", count: current_guest.confirmed_plus_ones) %></i></b>.
+      <br />
+      En caso de que necesites hacer algún cambio, por favor contáctanos. De cualquier manera, nuestra wedding planner se pondrá en contacto contigo para confirmar los detalles.
+    <% else %>
+      Tu invitación es <b><%= t("tickets", count: total_plus_ones(current_guest)) %></b>.
+      <br />
+      <%= companion_names(current_guest) %>
+    <% end %>
+  </div>
 
-      <!-- Confirmation status -->
-      <p class="font-sans text-lg mb-4 text-orange-50">
-        <% if current_guest.confirmed? %>
-          Tu invitación está <b>confirmada <i><%= t("tickets", count: current_guest.confirmed_plus_ones) %></i></b>.
-          <br />
-          En caso de que necesites hacer algún cambio, por favor contáctanos. De cualquier manera, nuestra wedding planner se pondrá en contacto contigo para confirmar los detalles.
-        <% else %>
-          Tu invitación es <b><%= t("tickets", count: total_plus_ones(current_guest)) %></b>.
-          <br />
-          <%= companion_names(current_guest) %>
-        <% end %>
-      </p>
-
-      <!-- Information message -->
-      <p class="font-sans text-lg text-orange-50 tracking-wide">
-        Aquí encontrarás toda la información necesaria para que puedas disfrutar de nuestra boda.
-      </p>
-    </div>
-
-    <!-- Event date and calendar link -->
-    <div class="mt-6 my-10 py-6 px-6">
-
-      <div class="flex itesms-center flex-row align-center mb-4">
-        <div class="flex items-center justify-center bg-orange-50 w-8 h-8 rounded-full mr-2 ">
-          <i class="fas fa-calendar-alt text-lg text-green-950"></i>
-        </div>
-        <p class="text-2xl">Fecha</p>
-      </div>
-      
-      <p class="font-sans text-lg">Sábado 27 de julio 2024</p>
-
-      <div class="flex w-full mt-6">
-        <%= link_to(calendar_path, class: "secondary-button  rounded-tl-lg rounded-br-lg w-full md:w-1/2") do %>
-          <i class="fa-solid fa-download mr-1"></i> Agrega el evento al calendario
-        <% end %>
-      </div>
+  <div class="px-6 my-6">
+    <div class="flex justify-center">
+      <%= image_tag "divider-branch.png", class: "h-12 md:h-16" %>
     </div>
   </div>
 
-  <div class="flex flex-col details">
-    <div class="mx-auto py-4">
-
-      <!-- Venue information -->
-      <div class="mt-6">
-      
-        <div class="flex items-center flex-row align-center justify-star mb-4 px-6">
-          <div class="flex items-center justify-center bg-green-950 w-8 h-8 rounded-full mr-2">
-            <i class="fa-solid fa-location-dot text-base text-orange-50"></i>
-          </div>
-          <p class="text-2xl">Venue</p>
-        </div>
-
-        <p class="font-sans text-lg px-6">Jardín Fuentes 22, Pedregal de las Fuentes, Morelos, México</p>
-      </div>
-
-      <!-- Embedded map -->
-      <div class="mt-6 w-full">
-        <iframe 
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.023491874021!2d-99.1666649241962!3d18.886038982279942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce75c1118eea7d%3A0x48e0c6fa5b7cbc8!2sJard%C3%ADn%20Fuentes%2022!5e0!3m2!1sen!2smx!4v1707969671071!5m2!1sen!2smx" 
-          width="100%" 
-          height="450px" 
-          style="border:0;" 
-          allowfullscreen 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-
-      <!-- Dress code -->
-      <div class="bg-green-800 py-12 px-6">
-
-        <div class="flex itesms-center flex-row align-center mb-4 text-green-950">
-          <div class="flex items-center justify-center bg-orange-50 w-8 h-8 rounded-full mr-2 ">
-            <i class="fa-solid fa-shoe-prints text-lg text-green-950"></i>
-          </div>
-          <p class="text-2xl text-orange-50">Código de vestimenta</p>
-        </div> 
-
-      
-        
-        <p class="font-sans text-lg text-orange-50">Cocktail</p>
-
-<!-- Gifts section -->
-        <div class="mt-10">
-
-          <div class="flex itesms-center flex-row align-center mb-4 text-green-950">
-              <div class="flex items-center justify-center bg-orange-50 w-8 h-8 rounded-full mr-2 ">
-                <i class="fa-solid fa-gifts text-lg text-green-950"></i>
-              </div>
-              <p class="text-2xl text-orange-50">Regalos</p>
-            </div> 
-
-        
-
-
-            <p class="font-sans text-lg text-orange-50">
-              Tu presencia es nuestro mejor regalo ❤️.
-              <br />
-              Si lo deseas, puedes invitarnos un café en Italia. Puedes colocar tu donativo en los sobres que estarán disponibles el día del evento.
-            </p>
-        </div>
-
-      </div>
-
-      
-
-      <div class="px-6 mt-6 pb-20">
-        <!-- FAQ section -->
-        <div class="">
-          <p class="text-3xl font-serif mb-2 font-extrabold text-green-800">
-            ¿Aún tienes dudas?
-          </p>
-          <%= link_to(faq_path, target: "_blank", class: "text-green-950 text-lg hover:cursor-pointer hover:text-green-500 pl-1 sm:max-w-prose inline underline") do %>
-            Consulta la sección de preguntas frecuentes
-          <% end %>
-        </div>
-
-      </div>
-      <!-- RSVP button for unconfirmed guests -->
-      <% unless current_guest.confirmed? %>
-        <div class="sm:flex sm:items-center sm:justify-center">
-          <%= link_to("Confirmar asistencia", new_rsvp_path, class: "fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base") %>
-        </div>
-      <% end %>
-    </div>
+  <!-- Information message -->
+  <div class="px-6 mb-4">
+    <p class="font-sans text-lg tracking-wide">
+      Aquí encontrarás toda la información necesaria para que puedas disfrutar de nuestra boda.
+    </p>
   </div>
+
+  <!-- Event date and calendar link -->
+  <div class="px-6 my-4">
+    <p class="mt-2 mb-4 text-3xl font-semibold font-serif">Fecha</p>
+    <p class="font-sans text-lg">Sábado 27 de julio 2024, 4:00 PM</p>
+  </div>
+
+  <!-- Venue information -->
+  <div class="px-6 my-4">
+    <p class="mt-2 mb-4 text-3xl font-semibold font-serif">Venue</p>
+
+    <p class="font-sans text-lg">Jardín Fuentes 22, Pedregal de las Fuentes, Morelos, México</p>
+  </div>
+
+  <!-- Embedded map -->
+  <div class="mt-6 w-full">
+    <iframe
+         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.023491874021!2d-99.1666649241962!3d18.886038982279942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce75c1118eea7d%3A0x48e0c6fa5b7cbc8!2sJard%C3%ADn%20Fuentes%2022!5e0!3m2!1sen!2smx!4v1707969671071!5m2!1sen!2smx"
+      width="100%"
+      height="450px"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+
+  <!-- Dress code -->
+  <div class="px-6 my-4">
+    <p class="mt-2 mb-4 text-3xl font-semibold font-serif">Código de vestimenta</p>
+
+    <p class="font-sans text-lg">Cocktail. Fiesta en jardín.</p>
+  </div>
+
+  <!-- Gifts section -->
+  <div class="px-6 mb-4">
+    <p class="mt-2 mb-4 text-3xl font-semibold font-serif">Regalos</p>
+
+    <p class="font-sans text-lg">
+      Su presencia es nuestro mejor regalo ❤️.
+      <br />
+      Si está en sus posibilidades, realicen sus presentes de forma monetaria via tranferencia o en los sobres disponibles en el evento.
+    </p>
+  </div>
+
+  <!-- FAQ section -->
+  <div class="px-6 mt-6 pb-20">
+    <p class="mt-2 mb-4 text-3xl font-semibold font-serif">¿Aún tienes dudas?</p>
+
+    <%= link_to(faq_path, target: "_blank", class: "text-emerald-950 text-lg hover:cursor-pointer hover:text-emerald-500 pl-1 sm:max-w-prose inline underline") do %>
+      Consulta la sección de preguntas frecuentes
+    <% end %>
+  </div>
+
+  <!-- RSVP button for unconfirmed guests -->
+  <% if current_guest.confirmed? %>
+    <%= link_to(calendar_path, class: "fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base") do %>
+      <i class="fa-solid fa-download mr-1"></i> Agrega al tu calendario
+    <% end %>
+  <% else %>
+    <%= link_to("Confirmar asistencia", new_rsvp_path, class: "fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base") %>
+  <% end %>
 </div>
