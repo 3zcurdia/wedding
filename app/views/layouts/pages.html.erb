@@ -12,6 +12,7 @@
 
   <body class="bg-orange-50 text-emerald-900 antialiased">
     <%= yield %>
+    <%= turbo_frame_tag :remote_modal %>
   </body>
   <script defer src="https://kit.fontawesome.com/238d584d83.js" crossorigin="anonymous"></script>
 </html>

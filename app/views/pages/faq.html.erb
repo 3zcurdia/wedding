@@ -1,9 +1,16 @@
+<%= turbo_frame_tag :remote_modal do %>
+<dialog id="faq_modal" aria-labelledby="modal_title" data-controller="remote-modal" class="bg-orange-50 text-emerald-900 antialiased rounded-lg shadow-md backdrop:bg-black backdrop:opacity-50">
 <div class="flex flex-col items-center mx-auto min-h-dvh">
   <div class="p-4">
     <div class="max-w-screen-md">
-      <div class="mt-6 py-4">
+      <header>
+        <form method="dialog" class="flex flex-row-reverse">
+          <button type="submit">
+            <i class="fas fa-times text-2xl text-emerald-900"></i>
+          </button>
+        </form>
         <p class="text-5xl font-serif font-extrabold text-emerald-900 capitalize text-center">Preguntas frecuentes</p>
-      </div>
+      </header>
       <div class="pt-4">
         <p class="text-3xl font-serif mb-2 font-extrabold text-emerald-950">Sobre el lugar…</p>
       </div>
@@ -65,3 +72,5 @@
     </div>
   </div>
 </div>
+</dialog>
+<% end %>

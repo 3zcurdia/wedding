@@ -12,3 +12,6 @@ application.register("companion-list", CompanionListController)
 
 import NumericInputController from "./numeric_input_controller"
 application.register("numeric-input", NumericInputController)
+
+import RemoteModalController from "./remote_modal_controller"
+application.register("remote-modal", RemoteModalController)
