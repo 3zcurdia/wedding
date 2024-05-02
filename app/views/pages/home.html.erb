@@ -27,10 +27,17 @@
   </div>
 </div>
 
-<div class="flex flex-col items-center justify-center">
-  <div class="max-w-screen-sm px-4 ">
+<div class="flex flex-col items-center justify-center max-w-screen-sm px-4 ">
+  <div class="h-80 w-full md:h-[30rem] md:w-[30rem] my-8 card-border">
+    <%= image_tag("engagement-01.webp", height: "600px", class: "w-full h-full rounded-lg object-cover z-0", loading: :lazy) %>
+  </div>
+</div>
 
-    <div class="flex flex-col items-center justify-center w-full px-4 sm:px-0 pt-8 sm:pt-0 mb-10">
+<%= turbo_frame_tag(:details, src: details_path) do %>
+
+<div class="flex flex-col items-center justify-center">
+  <div class="max-w-screen-sm px-4">
+    <div class="flex flex-col items-center justify-center w-full px-4 sm:px-0 pt-4 sm:pt-0 mb-10">
       <p class="prose text-xl sm:text-2xl mb-4 sm:mb-0 text-center">
         ¿Listo para bailar bajo las estrellas <br/> y brindar por el amor?
       </p>
@@ -40,9 +47,7 @@
         <%= form.submit "Ver detalles", class: "primary-button font-bold rounded-tl-lg rounded-br-lg my-5" %>
       <% end %>
     </div>
-
-    <div class="h-80 w-full md:h-[30rem] md:w-[30rem] mb-10 card-border">
-      <%= image_tag("engagement-01.webp", height: "600px", class: "w-full h-full rounded-lg object-cover z-0", loading: :lazy) %>
-    </div>
   </div>
 </div>
+
+<% end %>

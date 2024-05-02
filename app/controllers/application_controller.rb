@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def invalidate_guest!
+    Current.guest = nil
+    session[:guest_id] = nil
+  end
+
   def current_admin = Current.session_record if Current.session_admin?
   helper_method :current_admin
 
