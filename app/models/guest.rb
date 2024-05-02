@@ -65,7 +65,8 @@ class Guest < ApplicationRecord
   end
 
   def confirm!
-    update!(confirmed_at: Time.zone.now)
+    update!(confirmed_at: Time.zone.now) if main?
+    companion_guests.each(&:confirm!)
   end
 
   def confirmed?
