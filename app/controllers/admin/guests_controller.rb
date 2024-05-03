@@ -6,7 +6,7 @@ module Admin
 
     def index
       @guests_count = Guest.count
-      @confirmed_plus_ones_count = Guest.confirmed.sum(:confirmed_plus_ones)
+      @confirmed_plus_ones_count = Guest.confirmed.count + Guest.confirmed.sum(:confirmed_plus_ones)
       @plus_ones_count = Guest.sum(:plus_ones_count)
       query = if params[:search].present?
                 Guest.search(params[:search])
