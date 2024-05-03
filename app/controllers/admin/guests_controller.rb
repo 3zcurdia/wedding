@@ -11,7 +11,7 @@ module Admin
       query = if params[:search].present?
                 Guest.search(params[:search])
               else
-                Guest.all
+                Guest.includes(:companion_guests).all
               end
       @pagy, @guests = pagy(query, page: params[:page])
     end

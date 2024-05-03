@@ -11,9 +11,30 @@
     </p>
 
     <p>
-      <strong>Plus ones:</strong>
-      <%= guest.plus_ones_count %>
+      <strong>Main:</strong>
+      <%= ✅ if guest.main? %>
     </p>
+
+    <p>
+      <strong>Available Plus ones:</strong>
+      <%= guest.available_plus_ones %>
+    </p>
+
+    <p>
+      <strong>Confirmed Plus ones:</strong>
+      <%= guest.confirmed_plus_ones %>
+    </p>
+
+    <% if guest.main? %>
+    <p>
+      <strong>Companions:</strong>
+      <ul class="list-disc ml-2 min-h-8">
+        <% guest.companion_guests.each do |companion| %>
+          <li class="ml-4 font-semibold" data-companion-list-target="companion"><%= companion.full_name %></li>
+        <% end %>
+      </ul>
+    </p>
+    <% end %>
 
     <div class="flex flex-row gap-2">
       <% if action_name != "show" %>
