@@ -7,6 +7,7 @@ class Guest < ApplicationRecord
   has_many :companion_guests, class_name: "Guest", foreign_key: :companion_id
   belongs_to :companion, class_name: "Guest", optional: true
 
+  scope :main, -> { where.not(companion_id: nil) }
   scope :confirmed, -> { where.not(confirmed_at: nil) }
 
   validates :first_name, :last_name, presence: true
@@ -43,6 +44,10 @@ class Guest < ApplicationRecord
 
     def with_phone(phone)
       find_by(phone: phone.gsub(/\D/, ""))
+    end
+
+    def total_confirmed
+      confirmed.main.count.to_i + confirmed.sum(:confirmed_plus_ones).to_i
     end
   end
 
