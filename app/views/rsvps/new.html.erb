@@ -11,7 +11,7 @@
       <p class="text-3xl font-serif mb-2 font-extrabold">Boletos</p>
       <p class="font-sans">Para confirmar tu asistencia marca el numero de boletos que vas a utilizar.</p>
     </div>
-    <%= form_with(model: @guest, method: :post, url: rsvp_path, class: "w-full") do |form| %>
+    <%= form_with(model: @guest, method: :post, url: rsvp_path, class: "w-full mb-8") do |form| %>
       <div class="my-2">
         <%= form.label :phone, "Confirma tu numero telefonico", class: "fonts-sans" %>
         <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full", value: number_to_phone(@guest.phone) %>
