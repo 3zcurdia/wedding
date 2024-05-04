@@ -1,7 +1,7 @@
 <div class="flex flex-col">
   <div class="mx-auto py-4 px-8">
     <div class="mt-6 py-4">
-      <p class="text-5xl font-serif font-extrabold text-emerald-900 capitalize text-center"><%= @guest.first_name %><br/> confirma tú asistencia</p>
+      <p class="text-5xl font-serif font-extrabold text-emerald-900 capitalize text-center"><%= @guest.first_name %><br/> confirma tu asistencia</p>
     </div>
     <div class="mt-6">
       <p class="text-3xl font-serif mb-2 font-extrabold">¿Cuándo?</p>
@@ -18,7 +18,7 @@
       </div>
 
       <% if @guest.main? %>
-      <div class="my-2" data-controller="companion-list" data-companion-list-disabled-class="line-through">
+      <div class="my-2 mb-4" data-controller="companion-list" data-companion-list-disabled-class="line-through">
         <%= form.label :plus_ones_count, "Confirma tu numero de acompañantes", class: "fonts-sans" %>
         <div class="relative flex items-center mt-1" data-controller="numeric-input">
         <button type="button" class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-9" data-action="numeric-input#decrement companion-list#updateList">
@@ -42,7 +42,7 @@
       </div>
       <% end %>
 
-      <%= form.submit "Confirmar asistencia", class: "-ml-8 fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base" %>
+      <%= form.submit "Confirmar asistencia", class: "-ml-8 fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base", target: "_top" %>
     <% end %>
   </div>
 </div>
