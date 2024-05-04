@@ -19,6 +19,7 @@ gem "bootsnap", require: false
 gem "jbuilder"
 gem "litestack"
 gem "pagy"
+gem "rack-attack"
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
