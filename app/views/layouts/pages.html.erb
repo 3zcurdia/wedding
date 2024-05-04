@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <title>Aidé & Luis</title>
-    <meta name="description" content="Confirma tu asistencia a la boda de Aidé & Luis" />
-    <meta property="og:title" content="Boda de Aidé & Luis" />
-    <meta property="og:image" content="<%= asset_path_url("thumbnail.jpeg") %>" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta property="og:site_name" content="Sitio de la boda de Aidé & Luis" />
+    <meta property="og:title" content="Aidé & Luis" />
+    <meta property="og:description" content="Confirma tu asistencia a la boda de Aidé & Luis" />
+    <meta property="og:image" itemprop="image" content="<%= asset_url("thumbnail.jpeg") %>">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aideyluis.com" />
+    <meta property="og:locale" content="es_MX" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
