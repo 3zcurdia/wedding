@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "3.3.0"
+ruby "3.3.1"
 
 gem "propshaft"
 gem "puma", ">= 5.0"
@@ -19,7 +19,6 @@ gem "bootsnap", require: false
 gem "jbuilder"
 gem "litestack"
 gem "pagy"
-gem "rack-attack"
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
