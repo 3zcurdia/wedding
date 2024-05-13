@@ -93,7 +93,7 @@
   <!-- RSVP button for unconfirmed guests -->
   <% if current_guest.confirmed? %>
     <%= link_to(calendar_path, class: "fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base", target: "_blank") do %>
-      <i class="fa-solid fa-download mr-1"></i> Agrega al tu calendario
+      <i class="fa-solid fa-download mr-1"></i> Agrega a tu calendario
     <% end %>
   <% else %>
     <%= link_to("Confirmar asistencia", new_rsvp_path, class: "fixed bottom-0 sm:bottom-5 primary-button w-full font-bold uppercase text-base", target: "_top") %>
