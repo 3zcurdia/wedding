@@ -39,10 +39,11 @@
     <table class="w-full">
       <thead class="bg-teal-800 text-white">
         <tr>
-          <th class="px-4 py-2"><%= guest_sort_link("name") %></th>
+          <th class="px-4 py-2"><%= guest_sort_link("first_name") %></th>
+          <th class="px-4 py-2"><%= guest_sort_link("last_name") %></th>
           <th class="px-4 py-2"><%= guest_sort_link("phone") %></th>
+          <th class="px-4 py-2">Plus ones</th>
           <th class="px-4 py-2">Main</th>
-          <th class="px-4 py-2">Confirmed/Available</th>
           <th class="px-4 py-2">Companions</th>
           <th class="px-4 py-2"><%= guest_sort_link("last_viewed_at") %></th>
           <th class="px-4 py-2"><%= guest_sort_link("confirmed_at") %></th>
@@ -52,10 +53,14 @@
       <tbody id="guests">
         <% @guests.each do |guest| %>
           <tr id="<%= dom_id guest %>" class="border-t border-gray-300 hover:bg-gray-200 transition-colors duration-200">
-            <td class="px-4 py-2"><%= guest.full_name %></td>
+            <td class="px-4 py-2"><%= guest.first_name %></td>
+            <td class="px-4 py-2"><%= guest.last_name %></td>
             <td class="px-4 py-2"><%= number_to_phone guest.phone %></td>
+            <td class="px-4 py-2">
+              <b><%= guest.confirmed_plus_ones %></b> Confirmed<br>
+              <b><%= guest.available_plus_ones %></b> Available
+            </td>
             <td class="px-4 py-2 text-center"><%= "✅" if guest.main? %></td>
-            <td class="px-4 py-2 text-center"><%= guest.confirmed_plus_ones %>/<%= guest.available_plus_ones %></td>
             <td class="px-4 py-2 text-center"><%= guest.companion_guests.pluck(:first_name).to_sentence %></td>
             <td class="px-4 py-2 capitalize"><%= ld guest.last_viewed_at, format: :short %></td>
             <td class="px-4 py-2 capitalize"><%= ld guest.confirmed_at, format: :short %></td>
