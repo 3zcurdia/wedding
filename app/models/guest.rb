@@ -54,7 +54,7 @@ class Guest < ApplicationRecord
   def available_plus_ones
     return 0 unless main?
 
-    companion_guests.count.to_i + plus_ones_count.to_i
+    companion_guests.size.to_i + plus_ones_count.to_i
   end
 
   def main?

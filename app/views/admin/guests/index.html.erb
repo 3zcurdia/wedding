@@ -39,13 +39,13 @@
     <table class="w-full">
       <thead class="bg-teal-800 text-white">
         <tr>
-          <th class="px-4 py-2 ">Name</th>
-          <th class="px-4 py-2">Phone</th>
+          <th class="px-4 py-2"><%= guest_sort_link("name") %></th>
+          <th class="px-4 py-2"><%= guest_sort_link("phone") %></th>
           <th class="px-4 py-2">Main</th>
           <th class="px-4 py-2">Confirmed/Available</th>
           <th class="px-4 py-2">Companions</th>
-          <th class="px-4 py-2">Last time viewed</th>
-          <th class="px-4 py-2">Confirmed at</th>
+          <th class="px-4 py-2"><%= guest_sort_link("last_viewed_at") %></th>
+          <th class="px-4 py-2"><%= guest_sort_link("confirmed_at") %></th>
           <th class="px-4 py-2">Actions</th>
         </tr>
       </thead>

@@ -8,11 +8,7 @@ module Admin
       @guests_count = Guest.count
       @plus_ones_count = Guest.sum(:plus_ones_count)
       @confirmed_count = Guest.total_confirmed
-      query = if params[:search].present?
-                Guest.search(params[:search])
-              else
-                Guest.includes(:companion_guests).all
-              end
+      query = build_query
       @pagy, @guests = pagy(query, page: params[:page])
     end
 
@@ -56,6 +52,30 @@ module Admin
     end
 
     private
+
+    def build_query
+      build_search_query.then { |query| sort_query(query) }
+    end
+
+    def build_search_query
+      if params[:search].present?
+        Guest.search(params[:search])
+      else
+        Guest.includes(:companion_guests).all
+      end
+    end
+
+    def sort_query(query)
+      return query if params[:sort_column].blank? || params[:sort_direction].blank?
+
+      if params[:sort_column] == "name"
+        query.order(:first_name, :last_name, params[:sort_direction].to_sym)
+      elsif Guest.column_names.include?(params[:sort_column])
+        query.order("#{params[:sort_column]} #{params[:sort_direction]}")
+      else
+        query
+      end
+    end
 
     def set_guest
       @guest = Guest.find(params[:id])
