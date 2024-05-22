@@ -57,8 +57,10 @@
             <td class="px-4 py-2"><%= guest.last_name %></td>
             <td class="px-4 py-2"><%= number_to_phone guest.phone %></td>
             <td class="px-4 py-2">
+              <p class="text-xs">
               <b><%= guest.confirmed_plus_ones %></b> Confirmed<br>
               <b><%= guest.available_plus_ones %></b> Available
+              </p>
             </td>
             <td class="px-4 py-2 text-center"><%= "✅" if guest.main? %></td>
             <td class="px-4 py-2 text-center"><%= guest.companion_guests.pluck(:first_name).to_sentence %></td>
