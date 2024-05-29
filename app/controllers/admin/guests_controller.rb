@@ -25,7 +25,6 @@ module Admin
 
       respond_to do |format|
         if @guest.save
-          Guest.rebuild_index!
           format.html { redirect_to admin_guests_url, notice: "Guest was successfully created." }
         else
           format.html { render :new, status: :unprocessable_entity }
