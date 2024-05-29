@@ -7,7 +7,8 @@ module AdminHelper
 
   def sort_link(column, path_func)
     direction = params[:sort_column] == column && params[:sort_direction] == "asc" ? "desc" : "asc"
-    link_to public_send(path_func, sort_column: column, sort_direction: direction), class: "flex items-center gap-2 hover:cursor-pointer" do
+    link_to public_send(path_func, sort_column: column, sort_direction: direction),
+            class: "flex items-center gap-2 hover:cursor-pointer" do
       sortable_icon(direction) + content_tag(:span, column.titleize)
     end
   end
