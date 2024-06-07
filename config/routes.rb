@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     namespace :guests do
       resources :imports, only: %i[new create]
     end
-    resources :guests
+    resources :guests do
+      member do
+        put "cancel", to: "guests#cancel"
+      end
+    end
   end
 end

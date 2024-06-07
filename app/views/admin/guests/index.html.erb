@@ -52,7 +52,7 @@
       </thead>
       <tbody id="guests">
         <% @guests.each do |guest| %>
-          <tr id="<%= dom_id guest %>" class="border-t border-gray-300 hover:bg-gray-200 transition-colors duration-200">
+          <tr id="<%= dom_id guest %>" class="border-t border-gray-300 hover:bg-gray-200 transition-colors duration-200 <%= "text-gray-500 bg-gray-100" if guest.canceled? %>">
             <td class="px-4 py-2"><%= guest.first_name %></td>
             <td class="px-4 py-2"><%= guest.last_name %></td>
             <td class="px-4 py-2"><%= number_to_phone guest.phone %></td>
@@ -74,7 +74,10 @@
                 <%= link_to edit_admin_guest_path(guest), class: "text-sky-900 hover:text-sky-700 cursor-pointer" do %>
                   <i class="fas fa-edit"></i>
                 <% end %>
-                <%= button_to admin_guest_path(guest), method: :delete, class: "text-red-500 hover:text-red-700 cursor-pointer" do %>
+                <%= button_to cancel_admin_guest_path(guest), method: :put, class: "text-yellow-500 hover:text-yellow-700 cursor-pointer", form: { data: { turbo_confirm: "Are you sure you want to cancel this guest?" }} do %>
+                  <i class="fa-solid fa-plane-slash"></i>
+                <% end %>
+                <%= button_to admin_guest_path(guest), method: :delete, class: "text-red-500 hover:text-red-700 cursor-pointer", form: { data: { turbo_confirm: "Are you sure you want to delete this guest?" }} do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
               </div>

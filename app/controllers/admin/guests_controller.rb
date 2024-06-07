@@ -2,7 +2,7 @@
 
 module Admin
   class GuestsController < ApplicationController
-    before_action :set_guest, only: %i[show edit update destroy]
+    before_action :set_guest, only: %i[show edit update destroy cancel]
 
     def index
       @guests_count = Guest.count
@@ -47,6 +47,14 @@ module Admin
 
       respond_to do |format|
         format.html { redirect_to admin_guests_url, notice: "Guest was successfully destroyed." }
+      end
+    end
+
+    def cancel
+      @guest.cancel!
+
+      respond_to do |format|
+        format.html { redirect_to admin_guests_url, notice: "Guest was successfully canceled." }
       end
     end
 

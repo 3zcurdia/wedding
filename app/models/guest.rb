@@ -9,6 +9,7 @@ class Guest < ApplicationRecord
 
   scope :main, -> { where.not(companion_id: nil) }
   scope :confirmed, -> { where.not(confirmed_at: nil) }
+  scope :canceled, -> { where.not(canceled_at: nil) }
 
   validates :first_name, :last_name, presence: true
   validates :phone, presence: true, uniqueness: true, if: :main?
@@ -76,5 +77,14 @@ class Guest < ApplicationRecord
 
   def confirmed?
     confirmed_at.present?
+  end
+
+  def cancel!
+    update!(canceled_at: Time.zone.now, confirmed_at: nil, plus_ones_count: 0, confirmed_plus_ones: 0)
+    companion_guests.delete_all if main?
+  end
+
+  def canceled?
+    canceled_at.present?
   end
 end
