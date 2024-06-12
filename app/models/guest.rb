@@ -7,8 +7,9 @@ class Guest < ApplicationRecord
   has_many :companion_guests, class_name: "Guest", foreign_key: :companion_id
   belongs_to :companion, class_name: "Guest", optional: true
 
-  scope :main, -> { where.not(companion_id: nil) }
-  scope :confirmed, -> { where.not(confirmed_at: nil) }
+  scope :invitable, -> { where(canceled_at: nil) }
+  scope :main, -> { invitable.where.not(companion_id: nil) }
+  scope :confirmed, -> { invitable.where.not(confirmed_at: nil) }
   scope :canceled, -> { where.not(canceled_at: nil) }
 
   validates :first_name, :last_name, presence: true

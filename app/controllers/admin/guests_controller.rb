@@ -6,7 +6,7 @@ module Admin
 
     def index
       @guests_count = Guest.count
-      @plus_ones_count = Guest.sum(:plus_ones_count)
+      @plus_ones_count = Guest.main.sum(:plus_ones_count)
       @confirmed_count = Guest.total_confirmed
       query = build_query
       @pagy, @guests = pagy(query, page: params[:page])
