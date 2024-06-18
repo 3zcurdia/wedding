@@ -91,7 +91,7 @@ class Guest < ApplicationRecord
 
   def cancel!
     update!(canceled_at: Time.zone.now, confirmed_at: nil, plus_ones_count: 0, confirmed_plus_ones: 0)
-    companion_guests.cancel!
+    companion_guests.map(&:cancel!)
   end
 
   def canceled?
