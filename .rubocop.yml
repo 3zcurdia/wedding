@@ -5,11 +5,11 @@ AllCops:
   SuggestExtensions: false
   TargetRubyVersion: 3.3
   Exclude:
-    - 'bin/**/*'
-    - 'db/**/*.rb'
-    - 'node_modules/**/*'
-    - 'vendor/**/*'
-    - 'log/**/*'
+    - "bin/**/*"
+    - "db/**/*.rb"
+    - "node_modules/**/*"
+    - "vendor/**/*"
+    - "log/**/*"
 
 require:
   - rubocop-performance
@@ -32,3 +32,4 @@ Style/ClassAndModuleChildren:
 Metrics/BlockLength:
   Exclude:
     - config/environments/*.rb
+    - config/routes.rb

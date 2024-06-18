@@ -8,7 +8,7 @@ class Guest < ApplicationRecord
   belongs_to :companion, class_name: "Guest", optional: true
 
   scope :invitable, -> { where(canceled_at: nil) }
-  scope :main, -> { invitable.where.not(companion_id: nil) }
+  scope :main, -> { invitable.where(companion_id: nil) }
   scope :confirmed, -> { invitable.where.not(confirmed_at: nil) }
   scope :canceled, -> { where.not(canceled_at: nil) }
 
@@ -22,6 +22,15 @@ class Guest < ApplicationRecord
   end
 
   class << self
+    def export_csv(guests)
+      CSV.generate do |csv|
+        csv << %w[last_name first_name phone available_plus_ones confirmed_plus_ones]
+        guests.each do |guest|
+          csv << [guest.last_name, guest.first_name, guest.phone, guest.available_plus_ones, guest.confirmed_plus_ones]
+        end
+      end
+    end
+
     def import_csv(file)
       import_csv!(file)
       true
@@ -82,7 +91,7 @@ class Guest < ApplicationRecord
 
   def cancel!
     update!(canceled_at: Time.zone.now, confirmed_at: nil, plus_ones_count: 0, confirmed_plus_ones: 0)
-    companion_guests.delete_all if main?
+    companion_guests.cancel!
   end
 
   def canceled?

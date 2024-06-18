@@ -24,6 +24,9 @@ Rails.application.routes.draw do
       member do
         put "cancel", to: "guests#cancel"
       end
+      collection do
+        get "export", to: "guests/exports#show"
+      end
     end
   end
 end

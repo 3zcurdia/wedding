@@ -18,6 +18,10 @@
 </div>
 
   <div class="flex flex-row gap-2 items-center">
+    <%= link_to export_admin_guests_path, class: "bg-teal-800 hover:bg-teal-700 text-white cursor-pointer p-2 rounded" do %>
+        <i class="fa-solid fa-cloud-arrow-down"></i>
+        Export
+    <% end %>
     <%= form_with(url: admin_guests_imports_path, scope: :guests, method: :post, local: true, multipart: true, data: { controller: "autoupload-form" }) do |f| %>
       <%= f.file_field :file, accept: "text/csv", class: "hidden", data: { autoupload_form_target: "input", action: "change->autoupload-form#upload" } %>
       <button type="button" data-autoupload-form-target="button" data-action="click->autoupload-form#select" class="bg-teal-800 hover:bg-teal-700 text-white py-2 px-4 rounded cursor-pointer">
