@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_19_020609) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_20_010937) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,6 +48,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_020609) do
     t.index ["email"], name: "index_admin_users_on_email", unique: true
   end
 
+  create_table "albums", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_albums_on_slug", unique: true
+  end
+
   create_table "guests", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -62,6 +70,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_020609) do
     t.datetime "canceled_at"
     t.index ["companion_id"], name: "index_guests_on_companion_id"
   end
+
+# Could not dump table "guests_search_idx" because of following StandardError
+#   Unknown type '' for column 'first_name'
+
+# Could not dump table "guests_search_idx_config" because of following StandardError
+#   Unknown type '' for column 'k'
+
+  create_table "guests_search_idx_data", force: :cascade do |t|
+    t.binary "block"
+  end
+
+  create_table "guests_search_idx_docsize", force: :cascade do |t|
+    t.binary "sz"
+    t.integer "origin"
+  end
+
+# Could not dump table "guests_search_idx_idx" because of following StandardError
+#   Unknown type '' for column 'segid'
+
+# Could not dump table "guests_search_idx_instance" because of following StandardError
+#   Unknown type '' for column 'term'
+
+# Could not dump table "guests_search_idx_row" because of following StandardError
+#   Unknown type '' for column 'term'
 
   create_table "sessions", force: :cascade do |t|
     t.string "record_type", null: false
