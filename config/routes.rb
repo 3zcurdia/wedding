@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "details", to: "pages#details"
   get "faq", to: "pages#faq"
   get "calendar", to: "pages#calendar", as: :calendar
+  resources :albums, only: %i[show update], param: :slug
   resource :rsvp, only: %i[new create]
 
   namespace :admin do
