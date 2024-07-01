@@ -10,7 +10,7 @@
     "@tailwindcss/typography": "^0.5.13",
     "autoprefixer": "^10.4.19",
     "esbuild": "^0.21.5",
-    "postcss": "^8.4.38",
+    "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4"
   },
   "scripts": {
