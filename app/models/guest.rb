@@ -11,6 +11,7 @@ class Guest < ApplicationRecord
   scope :main, -> { invitable.where(companion_id: nil) }
   scope :confirmed, -> { invitable.where.not(confirmed_at: nil) }
   scope :canceled, -> { where.not(canceled_at: nil) }
+  scope :order_by_priority, -> { order(confirmed_at: :desc, confirmed_plus_ones: :desc, last_viewed_at: :desc) }
 
   validates :first_name, :last_name, presence: true
   validates :phone, presence: true, uniqueness: true, if: :main?
