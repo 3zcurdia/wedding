@@ -33,19 +33,23 @@
   </div>
 </div>
 
-<%= turbo_frame_tag :details, "autoscroll" => true, data: { autoscroll_block: "start", autoscroll_behavior: "smooth" } do %>
-<div class="flex flex-col items-center justify-center">
-  <div class="max-w-screen-sm px-4">
-    <div class="flex flex-col items-center justify-center w-full px-4 sm:px-0 pt-4 sm:pt-0 mb-10">
-      <p class="prose text-xl sm:text-2xl mb-4 sm:mb-0 text-center">
-        ¿Listo para bailar bajo las estrellas <br/> y brindar por el amor?
-      </p>
-      <p class="font-thin sm:text-lg mt-6">Para ver los detalles del evento ingresa tu número telefónico</p>
-      <%= form_with(url: guests_access_path, method: :post, scope: :guest, class: "w-full flex flex-col") do |form| %>
-        <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full" %>
-        <%= form.submit "Ver detalles", class: "primary-button font-bold rounded-tl-lg rounded-br-lg my-5" %>
-      <% end %>
+<% if current_guest.present? %>
+  <%= turbo_frame_tag :details, src: details_path %>
+<% else %>
+  <%= turbo_frame_tag :details, "autoscroll" => true, data: { autoscroll_block: "start", autoscroll_behavior: "smooth" } do %>
+  <div class="flex flex-col items-center justify-center">
+    <div class="max-w-screen-sm px-4">
+      <div class="flex flex-col items-center justify-center w-full px-4 sm:px-0 pt-4 sm:pt-0 mb-10">
+        <p class="prose text-xl sm:text-2xl mb-4 sm:mb-0 text-center">
+          ¿Listo para bailar bajo las estrellas <br/> y brindar por el amor?
+        </p>
+        <p class="font-thin sm:text-lg mt-6">Para ver los detalles del evento ingresa tu número telefónico</p>
+        <%= form_with(url: guests_access_path, method: :post, scope: :guest, class: "w-full flex flex-col") do |form| %>
+          <%= form.text_field :phone, placeholder: "(55)-55-55-5555", class: "mt-2 border-1 border-gray-300 rounded-lg py-2 px-5 w-full" %>
+          <%= form.submit "Ver detalles", class: "primary-button font-bold rounded-tl-lg rounded-br-lg my-5" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+  <% end %>
 <% end %>
