@@ -8,10 +8,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_guest
 
   def validate_guest!
-    if (guest = Guest.find_by(id: session[:guest_id]))
+    if (guest = Guest.find_by(id: session[: ]))
       Current.guest = guest
-    else
-      redirect_to root_path, alert: "Unable to access this page"
     end
   end
 
