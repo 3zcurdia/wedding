@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_guest
 
   def validate_guest!
-    Current.guest = guest if (guest = Guest.find_by(id: session[:guest_id]))
+    Current.guest = Guest.find_by(id: session[:guest_id])
   end
 
   def invalidate_guest!
