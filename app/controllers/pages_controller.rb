@@ -4,8 +4,7 @@ class PagesController < ApplicationController
   layout "pages"
   before_action :validate_guest!, except: %i[faq]
 
-  def home
-  end
+  def home; end
 
   def details; end
 
