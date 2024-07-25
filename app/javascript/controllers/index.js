@@ -10,6 +10,9 @@ application.register("autoupload-form", AutouploadFormController)
 import CompanionListController from "./companion_list_controller"
 application.register("companion-list", CompanionListController)
 
+import ImageModalController from "./image_modal_controller"
+application.register("image-modal", ImageModalController)
+
 import NumericInputController from "./numeric_input_controller"
 application.register("numeric-input", NumericInputController)
 

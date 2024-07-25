@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-center max-w-6xl mx-auto">
+<div data-controller="image-modal" class="flex flex-col items-center justify-center max-w-6xl mx-auto">
 <div id="<%= dom_id @album %>" class="flex flex-col items-center justify-center w-full">
   <h1 class="text-3xl font-bold py-4 capitalize w-full text-center"><%= @album.name %></h1>
 
@@ -12,13 +12,24 @@
     <% end %>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
   <% @album.photos.order(created_at: :desc).limit(50).each do |photo| %>
-    <div>
-    <%= image_tag url_for(photo.variant(:thumb)), class: "h-52 w-52 object-cover object-center rounded-lg" %>
-    </div>
+    <%= link_to "#", data: { action: "click->image-modal#openModal", src: url_for(photo) } do %>
+      <%= image_tag url_for(photo.variant(:thumb)), class: "h-52 w-52 object-cover object-center rounded-lg" %>
+    <% end %>
   <% end %>
   </div>
 </div>
 
+<div id="modal"
+    class="hidden fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 flex justify-center items-center"
+    data-image-modal-target="modal">
+    <!-- The close button -->
+    <a class="fixed z-90 top-6 right-8 text-white text-5xl font-bold"
+      href="#"
+      data-action="click->image-modal#closeModal">&times;</a>
+
+    <!-- A big image will be displayed here -->
+    <img id="modal-img" class="max-w-[800px] max-h-[600px] object-cover" data-image-modal-target="image" src=""> />
+</div>
 </div>
