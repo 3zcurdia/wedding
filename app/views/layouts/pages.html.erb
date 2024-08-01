@@ -6,7 +6,11 @@
 
     <meta property="og:site_name" content="Sitio de la boda de Aidé & Luis" />
     <meta property="og:title" content="Aidé & Luis" />
-    <meta property="og:description" content="Confirma tu asistencia a la boda de Aidé & Luis" />
+    <% if after_event? %>
+      <meta property="og:description" content="Revive los mejores momentos" />
+    <% else %>
+      <meta property="og:description" content="Confirma tu asistencia a la boda de Aidé & Luis" />
+    <% end %>
     <meta property="og:image" itemprop="image" content="<%= asset_url("thumbnail.jpeg") %>">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aideyluis.com" />
