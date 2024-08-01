@@ -3,6 +3,10 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def after_event?
+    Date.current.after?(Date.new(2024, 7, 27))
+  end
+
   def ld(date, **)
     return if date.blank?
 

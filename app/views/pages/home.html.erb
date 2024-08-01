@@ -29,11 +29,13 @@
 
 <div class="flex justify-center items-center mx-auto px-4">
   <div class="h-80 w-full md:h-[30rem] md:w-[30rem] my-8 card-border">
-    <%= image_tag("engagement-01.webp", height: "600px", class: "w-full h-full rounded-lg object-cover z-0", loading: :lazy) %>
+    <%= image_tag("photo-05.webp", height: "600px", class: "w-full h-full rounded-lg object-cover z-0", loading: :lazy) %>
   </div>
 </div>
 
-<% if current_guest.present? %>
+<% if after_event? %>
+  <%= turbo_frame_tag :thank_you, src: thank_you_path %>
+<% elsif current_guest.present? %>
   <%= turbo_frame_tag :details, src: details_path %>
 <% else %>
   <%= turbo_frame_tag :details, "autoscroll" => true, data: { autoscroll_block: "start", autoscroll_behavior: "smooth" } do %>

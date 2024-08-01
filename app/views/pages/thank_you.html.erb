@@ -1,0 +1,51 @@
+<%= turbo_frame_tag :thank_you do %>
+    <div class="flex flex-col min-h-screen text-center">
+      <div class="px-6 mt-8 mb-6">
+        <p class="text-6xl font-serif font-extrabold capitalize">
+            Gracias por acompañarnos
+        </p>
+      </div>
+      <div class="px-6 mb-4 font-sans text-lg">
+          Estamos muy agradecidos por contar contigo en este día tan especial.
+      </div>
+
+      <div class="px-6 my-6">
+        <div class="flex justify-center">
+          <%= image_tag "divider-branch.png", class: "h-12 md:h-16" %>
+        </div>
+      </div>
+
+      <!-- FAQ section -->
+      <div class="px-6 mt-6 pb-20">
+        <p class="mt-2 mb-4 text-3xl font-semibold font-serif">¿Tienes fotos?</p>
+
+        <%= link_to(album_path(@album), class: "text-emerald-950 text-lg hover:cursor-pointer hover:text-emerald-500 pl-1 sm:max-w-prose inline underline", target: "_top") do %>
+          Aqui puedes subir tus fotos del evento
+        <% end %>
+      </div>
+
+      <!-- Gifts section -->
+      <div class="px-6 mb-4">
+        <p class="mt-2 mb-4 text-3xl font-semibold font-serif">¿No pudiste dejarnos un regalo?</p>
+
+        <p class="font-sans text-lg">
+          Gracias por tu interés en hacernos un obsequio. Lamentablemente, las transferencias no estuvieron disponibles en el momento de la boda.
+          <br />
+          <br />
+          Aqui te dejamos los datos de nuestra cuenta bancaria <3
+          <br />
+          <b>Clabe:</b> <i>012 261 01525996358 7</i>
+          <br />
+          <b>Banco:</b> <i>BBVA</i>
+          <br />
+          <b>Nombre:</b> <i>Aide Cabrera</i>
+        </p>
+      </div>
+
+      <div class="px-6 mt-8 mb-6">
+        <p class="text-6xl font-serif font-extrabold capitalize">
+            Nos vemos pronto!
+        </p>
+      </div>
+    </div>
+<% end %>
