@@ -15,7 +15,7 @@
   <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
   <% @album.photos.order(created_at: :desc).limit(50).each do |photo| %>
     <%= link_to "#", data: { action: "click->image-modal#openModal", src: url_for(photo) } do %>
-      <%= image_tag url_for(photo.variant(:thumb)), class: "h-52 w-52 object-cover object-center rounded-lg" %>
+        <%= image_tag url_for(photo.variant(:thumb)), class: "h-52 w-52 object-cover object-center rounded-lg", data: { photo_id: photo.id } %> %>
     <% end %>
   <% end %>
   </div>
