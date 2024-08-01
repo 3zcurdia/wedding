@@ -6,7 +6,9 @@ class Album < ApplicationRecord
   validates :name, :slug, presence: true
   validates :slug, uniqueness: true
   has_many_attached :photos do |attachable|
-    attachable.variant :thumb, resize_to_limit: [150, 150]
+    attachable.variant :thumb, resize_to_limit: [250, 250]
+    attachable.variant :medium, resize_to_limit: [512, 512]
+    attachable.variant :large, resize_to_limit: [720, nil]
   end
 
   def to_param = slug
