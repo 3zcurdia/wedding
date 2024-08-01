@@ -11,6 +11,6 @@ export default class extends Controller {
   }
 
   closeModal() {
-    this.modalTarget.classList.remove("hidden");
+    this.modalTarget.classList.add("hidden");
   }
 }
