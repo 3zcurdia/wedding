@@ -24,7 +24,7 @@ gem "litestack"
 gem "pagy"
 
 group :development, :test do
-  gem "brakeman", "~> 6.1"
+  gem "brakeman", "~> 6.2"
   gem "bundler-audit", "~> 0.9.1"
   gem "debug", platforms: %i[mri windows]
 end
