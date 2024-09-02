@@ -25,7 +25,7 @@ gem "pagy"
 
 group :development, :test do
   gem "brakeman", "~> 6.2"
-  gem "bundler-audit", "~> 0.9.1"
+  gem "bundler-audit", "~> 0.9.2"
   gem "debug", platforms: %i[mri windows]
 end
 
