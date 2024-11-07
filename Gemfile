@@ -29,7 +29,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "authentication-zero", "~> 3.0"
+  gem "authentication-zero", "~> 4.0"
   gem "dockerfile-rails", ">= 1.6", require: false
   gem "rubocop", require: false
   gem "rubocop-performance", require: false
