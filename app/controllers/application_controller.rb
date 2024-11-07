@@ -16,7 +16,9 @@ class ApplicationController < ActionController::Base
     session[:guest_id] = nil
   end
 
-  def current_admin = Current.session_record if Current.session_admin?
+  def current_admin
+    Current.session_record if Current.session_admin?
+  end
   helper_method :current_admin
 
   def signed_in? = Current.session.present?
