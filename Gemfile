@@ -6,7 +6,7 @@ ruby "3.3.5"
 
 gem "propshaft"
 gem "puma", ">= 5.0"
-gem "rails", "8.0.0rc2"
+gem "rails", "8.0.0"
 gem "sqlite3"
 
 gem "cssbundling-rails"
