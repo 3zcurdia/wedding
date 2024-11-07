@@ -1,5 +1,5 @@
 test:
-  adapter: litedb
-  database: <%= Litesupport.root("test").join("data.sqlite3") %>
+  adapter: sqlite3
+  database: storage/test.sqlite3
   pool: 5
   timeout: 5000

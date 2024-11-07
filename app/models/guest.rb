@@ -3,7 +3,6 @@
 require "csv"
 
 class Guest < ApplicationRecord
-  include Litesearch::Model
   has_many :companion_guests, class_name: "Guest", foreign_key: :companion_id
   belongs_to :companion, class_name: "Guest", optional: true
 
@@ -16,11 +15,6 @@ class Guest < ApplicationRecord
   validates :first_name, :last_name, presence: true
   validates :phone, presence: true, uniqueness: true, if: :main?
   normalizes :phone, with: ->(value) { value.gsub(/\D/, "").strip }
-
-  litesearch do |schema|
-    schema.fields %i[first_name last_name phone]
-    schema.tokenizer :trigram
-  end
 
   class << self
     def export_csv(guests)

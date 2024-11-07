@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_20_010937) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_07_192112) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -71,12 +71,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_20_010937) do
     t.index ["companion_id"], name: "index_guests_on_companion_id"
   end
 
-# Could not dump table "guests_search_idx" because of following StandardError
-#   Unknown type '' for column 'first_name'
-
-# Could not dump table "guests_search_idx_config" because of following StandardError
-#   Unknown type '' for column 'k'
-
   create_table "guests_search_idx_data", force: :cascade do |t|
     t.binary "block"
   end
@@ -85,15 +79,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_20_010937) do
     t.binary "sz"
     t.integer "origin"
   end
-
-# Could not dump table "guests_search_idx_idx" because of following StandardError
-#   Unknown type '' for column 'segid'
-
-# Could not dump table "guests_search_idx_instance" because of following StandardError
-#   Unknown type '' for column 'term'
-
-# Could not dump table "guests_search_idx_row" because of following StandardError
-#   Unknown type '' for column 'term'
 
   create_table "sessions", force: :cascade do |t|
     t.string "record_type", null: false

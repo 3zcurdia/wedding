@@ -13,5 +13,3 @@ if Rails.env.development?
     guest.phone = "123-456-7890"
   end
 end
-
-Guest.rebuild_index!

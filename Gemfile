@@ -2,11 +2,11 @@
 
 source "https://rubygems.org"
 
-ruby "3.3.1"
+ruby "3.3.5"
 
 gem "propshaft"
 gem "puma", ">= 5.0"
-gem "rails", "~> 7.2"
+gem "rails", "8.0.0rc2"
 gem "sqlite3"
 
 gem "cssbundling-rails"
@@ -20,7 +20,6 @@ gem "bootsnap", require: false
 gem "csv"
 gem "image_processing", "~> 1.2"
 gem "jbuilder"
-gem "litestack"
 gem "pagy"
 
 group :development, :test do
